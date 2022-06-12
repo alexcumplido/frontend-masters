@@ -1,0 +1,12 @@
+:root {
+    --white: #ffffff;
+    --black: #000000;
+
+    --buttonNum: #d8d9db;
+    --buttonNumHover: #ebebeb;
+    --buttonNumActive: #bbbcbe;
+
+    --buttonFunction: #df974c;
+    --buttonFunctionHover: #dfb07e;
+    --buttonFunctionActive: #dd8d37;
+}

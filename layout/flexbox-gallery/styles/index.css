@@ -1,0 +1,60 @@
+.coll-list {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.collection h2:first-child {
+    margin: 0.5rem 0;
+}
+
+.coll-item {
+    margin: 0.5rem 0;
+    border-radius: 0.25rem;
+}
+
+.coll-card {
+    display: flex;
+    flex-flow: column nowrap;
+    position: relative;
+}
+
+.coll-card img {
+    width: 100%;
+}
+
+.coll-card figcaption {
+    position: absolute;
+    width: 100%;
+    bottom: 0%;
+    opacity: 0.75;
+    background-color: var(--lightBlack);
+}
+
+.card-link {
+    display: block;
+    padding: 1rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--white);
+}
+
+.card-link:hover {
+    text-decoration: underline;
+}
+
+@media screen and (min-width: 550px) {
+    .coll-list {
+        justify-content: space-between;
+    }
+
+    .coll-item {
+        flex-basis: 49%;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .coll-item {
+        flex-basis: 32%;
+    }
+}

@@ -1,0 +1,56 @@
+    .row {
+        display: grid;
+        gap: 1rem;
+        padding: 0.5rem;
+    }
+
+    figure {
+        height: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        border: 4px solid var(--color8);
+        border-radius: 5px;
+    }
+
+    figure img {
+        object-position: 0;
+        object-fit: cover;
+        grid-column: 1 / 2;
+        grid-row: 2 / 4;
+    }
+
+    figure figcaption {
+        grid-column: 1 / 2;
+        grid-row: 3 / 4;
+        opacity: 0.75;
+        background-color: var(--color0);
+    }
+
+    .card-link {
+        display: block;
+        padding: 1rem;
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--color1);
+    }
+
+    @media screen and (min-width: 800px) {
+        .row {
+            grid-template-columns: repeat(3, 1fr);
+
+        }
+
+        .colspan2 {
+            grid-column: span 2;
+            grid-row: span 1;
+        }
+
+        .colspan3 {
+            grid-column: span 3;
+        }
+
+        .rowspan2 {
+            grid-row: span 2;
+        }
+    }

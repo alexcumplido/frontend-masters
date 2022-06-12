@@ -1,0 +1,58 @@
+main {
+    width: 400px;
+    border: 1px solid var(--white);
+    font-size: 2rem;
+    color: var(--white);
+    background: var(--black);
+}
+
+.screen div {
+    padding: 2rem;
+    text-align: right;
+}
+
+.keyboard {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+button {
+    padding: 20px 5px;
+    border: 1px solid var(--white);
+    font-size: 2rem;
+    background-color: var(--buttonNum);
+}
+
+button:first-of-type {
+    flex-basis: 50%;
+}
+
+button:nth-of-type(n+2):nth-of-type(-n+15),
+button:nth-of-type(17) {
+    flex-basis: 25%;
+}
+
+button:nth-of-type(16) {
+    flex-basis: 75%;
+}
+
+.btn_number:hover {
+    background-color: var(--buttonNumHover);
+}
+
+.btn_number:active {
+    background-color: var(--buttonNumActive);
+}
+
+.btn_function {
+    color: var(--white);
+    background-color: var(--buttonFunction);
+}
+
+.btn_function:hover {
+    background-color: var(--buttonFunctionHover);
+}
+
+.btn_function:active {
+    background-color: var(--buttonFunctionActive);
+}

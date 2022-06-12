@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: verdana;
+        }
+
+        section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <img src="#" alt="">
+        <input type="text">
+        <button>Click me</button>
+    </section>
+    <script>
+        let img = document.querySelector('img');
+        let btn = document.querySelector('button');
+        let search = document.querySelector('input');
+            
+        btn.addEventListener('click',() => {
+            let resource = `${search.value}`;
+            fetch(`https://api.giphy.com/v1/gifs/translate?api_key=5Mz5yLskiMyPq9HbEgHZtLpJnEK5Dfqv&s=${resource}`,{mode:'cors'})
+                .then(response => response.json())
+                .then(response => img.src = response.data.images.original.url)
+                .catch(error => alert(error));
+        });
+ 
+    </script>
+
+</body>
+</html> 

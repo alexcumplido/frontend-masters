@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //Prototype inheritance
+        function User (username, age, email) {
+            this.username = username;
+            this.age = age;
+            this.email = email;
+        }
+
+        User.prototype.sayUsername = function() {
+            console.log(this.username);
+            return this;
+        }
+
+        function Admin(username, email, age, role) {
+            User.call(this, username, email, age);
+            this.role = role;
+        }
+
+        Admin.prototype = Object.create(User.prototype);
+
+        Admin.prototype.sayRole = function() {
+            console.log(this.role);
+            return this;
+        }
+
+        //Class inheritance
+        class User {
+            constructor(username, age, email) {
+                this.username = username;
+                this.age = age;
+                this.email = email;
+            }
+            sayUsername() {
+                console.log(this.username);
+                return this;
+            }
+        }
+
+        class Admin extends User {
+            constructor (username, email, age, role) {
+                super(username, email, age);
+                this.role = role;
+            }
+            sayRole() {
+                console.log(this.role);
+                return this;
+            }
+        }
+
+        const user1 = new User ('Alexandre', 29 , 'alex@gm');
+        const user2 = new User ('Laura', 33, 'lau@gm');
+        const user3 = new Admin ('Mammal', 100, 'mammal@gm', 'CTO');
+
+        //Object clonation
+        let age = 100;
+        let age2 = age;
+        console.log(age, age2);
+        
+        age = 200;
+        console.log(age, age2);
+
+        const players = ['Alexandre', 'Laura', 'Papa', 'Mixeta'];
+        const team0 = players.slice();
+        const team1 = [...players];
+        const team2 = Array.from(players);
+
+        team0.push('Periquito');
+        team1.push('Coco');
+        team2.push('Dentetes');
+        console.table(players);
+        console.table(team0);
+        console.table(team1);
+        console.table(team2);
+
+        const  person = {
+            name : 'Alexandre',
+            age: 29,
+        };
+        
+        const objectSpread = {...person};
+        const objectAssign = Object.assign({}, person);
+        objectSpread['age'] = 30;
+        objectAssign['age'] = 100;
+
+        console.log(person);
+        console.log(objectSpread);
+        console.log(objectAssign);
+
+        var t = [{name : 'maria'}]
+
+        var y = t
+
+        t
+        {name: 'maria'}
+
+        y[0].name = 'alex'
+        'alex'
+
+        t
+        {name: 'alex'}
+
+
+        t[0].name = 'edu'
+        'edu'
+
+        y
+        {name: 'edu'}
+
+
+        var a = [...t]
+
+        a[0].name = 'mire'
+        'mire'
+
+        var a = [{...t}]v //Spread off operator
+        a[0].name = 'anna'
+        'anna'
+
+        t
+        {name: 'mire'}
+
+        a
+        {name: 'anna'}
+
+        var uno = '1'
+
+        var dos = uno
+
+        dos = '2'
+        '2'
+        uno
+'1'
+
+
+    </script>
+</body>
+</html>
