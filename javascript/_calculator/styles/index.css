@@ -6,7 +6,7 @@ main {
     background: var(--black);
 }
 
-.screen div {
+.screen-output {
     padding: 2rem;
     text-align: right;
 }
@@ -16,27 +16,29 @@ main {
     flex-flow: row wrap;
 }
 
-button {
+.btn {
     padding: 20px 5px;
     border: 1px solid var(--white);
     font-size: 2rem;
     background-color: var(--buttonNum);
 }
 
-button:first-of-type {
+.btn:first-of-type {
     flex-basis: 50%;
 }
 
-button:nth-of-type(n+2):nth-of-type(-n+15),
-button:nth-of-type(17) {
+.btn:nth-of-type(n+2):nth-of-type(-n+15),
+.btn:nth-of-type(17) {
     flex-basis: 25%;
 }
 
-button:nth-of-type(16) {
+.btn:nth-of-type(16) {
     flex-basis: 75%;
 }
 
-.btn_number:hover {
+.btn_number:hover,
+.btn_clear:hover,
+.btn_back:hover {
     background-color: var(--buttonNumHover);
 }
 
