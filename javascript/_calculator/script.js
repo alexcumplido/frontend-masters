@@ -11,7 +11,7 @@ let addActive = false;
 let input = '';
 let firstOperand = '';
 let operationResult = 0;
-screen.innerText = 0;
+screen.innerText = 0; screen
 btnNumber.forEach(function (btn) {
     btn.addEventListener("click", function (event) {
         input += event.target.innerText;
