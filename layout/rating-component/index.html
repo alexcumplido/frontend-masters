@@ -1,49 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+    <meta name="author" content="Alexandre Cumplido Bou" />
+    <meta name="description" content="Interactive rating component" />
+    <title>Interactive rating component</title>
+    <link rel="stylesheet" href="./styles/main.css" />
+  </head>
+  <body>
+    <form class="rating-form">
+      <span class="logo"></span>
+      
+      <div class="rating-form__text">
+        <h3 class="rating-form__heading">
+          How did we do?
+        </h3>
+        <p class="rating-form__description">
+          Please let us know how we did with your support request. All feedback is appreciated 
+          to help us improve our offering!
+        </p>
+      </div>
+      <div class="rating-form__btn-group">
+        <button class="btn-rating">
+          1
+        </button>
+        <button class="btn-rating">
+          2
+        </button>
+        <button class="btn-rating">
+          3
+        </button>
+        <button class="btn-rating">
+          4
+        </button>
+        <button class="btn-rating">
+          5
+        </button>
+      </div>
+      <button class="btn-submit">submit</button>
+    </form>
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Interactive rating component</title>
+  <!--
+    Rating state end -->
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <!-- Thank you state start -->
 
-  <!-- Rating state start -->
+    <!-- You selected Add rating here out of 5 -->
+  <!-- 
+    Thank you!
 
-  How did we do?
+    We appreciate you taking the time to give a rating. If you ever need more support, 
+    don’t hesitate to get in touch! -->
 
-  Please let us know how we did with your support request. All feedback is appreciated 
-  to help us improve our offering!
+    <!-- Thank you state end -->
 
-  1 2 3 4 5
-
-  Submit
-
-  <!-- Rating state end -->
-
-  <!-- Thank you state start -->
-
-  You selected <!-- Add rating here --> out of 5
-
-  Thank you!
-
-  We appreciate you taking the time to give a rating. If you ever need more support, 
-  don’t hesitate to get in touch!
-
-  <!-- Thank you state end -->
-
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+  </body>
 </html>
