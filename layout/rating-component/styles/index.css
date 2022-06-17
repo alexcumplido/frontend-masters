@@ -1,0 +1,13 @@
+.rating {
+    outline: 1px solid black;
+}
+
+.rating_thankyou {
+    outline: 1px solid red;
+    display: none;
+}
+
+.btn-rating-active {
+    padding: 2rem;
+    background-color: red;
+}
