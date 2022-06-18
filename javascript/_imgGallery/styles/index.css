@@ -1,3 +1,10 @@
+.image-gallery {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .gallery-img {
     display: none;
     margin: 0.5rem 0;
@@ -8,12 +15,7 @@
     display: block;
 }
 
-.image-gallery {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+
 
 .btns {
     width: 100%;
