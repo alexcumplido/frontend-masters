@@ -1,4 +1,4 @@
-.image-gallery {
+/* .image-gallery {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -14,8 +14,6 @@
 .active {
     display: block;
 }
-
-
 
 .btns {
     width: 100%;
@@ -39,4 +37,4 @@
 .btn:disabled {
     background-color: var(--grey);
     cursor: not-allowed;
-}
+} */
