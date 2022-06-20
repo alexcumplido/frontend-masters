@@ -7,13 +7,13 @@ function fetchBreeds() {
         .then((data) => {
             const breedsObject = data.message;
             const breedsArray = Object.keys(breedsObject);
-            breedsArray.forEach((breed) => {
+            for (let i = 0; i < breedsArray.length; i++) {
                 const option = document.createElement("option");
-                option.value = breed;
-                option.innerText = breed;
+                option.value = breedsArray[i];
+                option.innerText = breedsArray[i];
                 select.appendChild(option);
-            })
-        });
+            }
+        })
 }
 
 select.addEventListener('change', function (event) {
