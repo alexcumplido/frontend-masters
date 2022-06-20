@@ -7,22 +7,13 @@
 </head>
 <body>
     <script>
-        // const getTodos = (resource) => {
-            return new Promise ((resolve, reject)=>{
-                const xhr = new XMLHttpRequest();
-                xhr.open('GET', resource);
-                
-                xhr.addEventListener('readystatechange',() => {
-                    if( (xhr.readyState === 4) && (xhr.status === 200)) {
-                        resolve(JSON.parse(xhr.responseText));
-                    } else if ((xhr.readyState === 4)) {
-                        reject(xhr.statusText);
-                    }
-                });
-                xhr.send();
-            });
-        
 
+        
+        fetch('/javascript-projects/asyncA.json')
+            .then(response => response.json())
+            .then(data => console.log(data))
+            .catch(err => console.log(err));
+    
         getTodos('asyncA.json').then(data => {
             console.log(data);
             return getTodos('asyncB.json');
@@ -45,10 +36,6 @@
             console.log(err);
         });
 
-        fetch('/javascript-projects/asyncA.json')
-            .then(response => response.json())
-            .then(data => console.log(data))
-            .catch(err => console.log(err));
       
         const getTodos = async () => {
             const response = await fetch('asyncA.json');
