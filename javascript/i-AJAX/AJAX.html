@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="author" content="Alexandre Cumplido Bou" />
+        <meta name="description" content="JSON and AJAX" />
+        <title>AJAX</title>
+    </head>
+    <body>
+        <script>
+            
+            fetch('./json/ajaxA.json')
+                .then(response => response.json())
+                .then(data => console.log(data))
+                .catch(err =>  console.log(err))
+    
+            const getTodos = async () => {
+                const response = await fetch('./json/ajaxA.json');
+                const data = await response.json();
+                return data;
+            };
+
+            Promise.all(
+                [
+                    getTodos('./json/ajaxA.json'),
+                    getTodos('./json/ajaxB.json'),
+                ]
+            ).then(data=>{
+                data.forEach(promise=> console.log(promise));
+            }).catch(err => {
+                console.log(err);
+            });
+
+        
+            getTodos('./json/ajaxA.json')
+                .then(data => console.log(data))
+                .catch(err =>  console.log(err));
+
+            getTodos().then(response => console.log(response));
+        
+        </script>
+    </body>
+</html>
