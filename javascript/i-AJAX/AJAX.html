@@ -9,37 +9,8 @@
         <title>AJAX</title>
     </head>
     <body>
-        <script>
-            
-            fetch('./json/ajaxA.json')
-                .then(response => response.json())
-                .then(data => console.log(data))
-                .catch(err =>  console.log(err))
-    
-            const getTodos = async () => {
-                const response = await fetch('./json/ajaxA.json');
-                const data = await response.json();
-                return data;
-            };
-
-            Promise.all(
-                [
-                    getTodos('./json/ajaxA.json'),
-                    getTodos('./json/ajaxB.json'),
-                ]
-            ).then(data=>{
-                data.forEach(promise=> console.log(promise));
-            }).catch(err => {
-                console.log(err);
-            });
-
-        
-            getTodos('./json/ajaxA.json')
-                .then(data => console.log(data))
-                .catch(err =>  console.log(err));
-
-            getTodos().then(response => console.log(response));
-        
-        </script>
+        <div class="dog-target"></div>
+        <button class="dog-btn">Fetch DOG</button>
+        <script src="./ajaxScript.js"></script>
     </body>
 </html>
