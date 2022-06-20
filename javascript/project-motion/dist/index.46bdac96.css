@@ -1,0 +1,34 @@
+:root {
+  --white: #fff;
+  --lightBlue: #0074d9;
+  --grey: #666;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, :before, :after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.ball {
+  width: 100px;
+  height: 100px;
+  background-color: #0074d9;
+  border-radius: 50%;
+  position: relative;
+}
+
+
+
+/*# sourceMappingURL=index.46bdac96.css.map */
