@@ -33,7 +33,6 @@ function fetchDogImage(event) {
         })
 }
 
-
 select.addEventListener('change', function (event) {
     fetchDogImage(event);
 });
