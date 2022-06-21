@@ -1,5 +1,7 @@
 const URL_BREED_DOGS = "https://dog.ceo/api/breeds/list/all";
 let select = document.querySelector(".breed-select");
+let targetDog = document.querySelector(".target-dog");
+let imageDog = document.querySelector(".target-dog-img");
 
 function fetchBreeds() {
     fetch(URL_BREED_DOGS)
@@ -16,10 +18,25 @@ function fetchBreeds() {
         })
 }
 
-select.addEventListener('change', function (event) {
-    console.log(event.target.value);
+function fetchDogImage(event) {
+    let dog = event.target.value;
+    const URL_IMAGE_DOG = `https://dog.ceo/api/breed/${dog}/images/random`;
+    fetch(URL_IMAGE_DOG)
+        .then((data) => data.url)
+        .then((imageUrl) => {
+            if (targetDog.imageDog) {
+                targetDog.removeChild(imageDog);
+            }
+            imageDog.src = imageUrl;
+            imageDog.alt = dog;
+            targetDog.appendChild(imageDog);
+        })
+}
 
-})
+
+select.addEventListener('change', function (event) {
+    fetchDogImage(event);
+});
 
 fetchBreeds();
 
