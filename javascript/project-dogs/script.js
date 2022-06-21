@@ -23,12 +23,12 @@ function fetchBreeds() {
 
 select.addEventListener('change', function (event) {
     let urlDog = `https://dog.ceo/api/breed/${event.target.value}/images/random`;
+    spinner.classList.add("show");
+    imageDog.classList.remove("show");
     fetchDog(urlDog);
 });
 
 function fetchDog(URL) {
-    spinner.classList.add("show");
-    imageDog.classList.remove("show");
     fetch(URL)
         .then(function (response) {
             return response.json();
