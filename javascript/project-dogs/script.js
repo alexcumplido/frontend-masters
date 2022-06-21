@@ -1,8 +1,8 @@
 const URL_BREED_DOGS = "https://dog.ceo/api/breeds/list/all";
 let select = document.querySelector(".breed-select");
-let targetDog = document.querySelector(".target-dog");
+
 let imageDog = document.querySelector(".target-dog-img");
-let loader = document.querySelector(".loader");
+let spinner = document.querySelector(".spinner");
 
 function fetchBreeds() {
     fetch(URL_BREED_DOGS)
@@ -22,12 +22,13 @@ function fetchBreeds() {
 }
 
 select.addEventListener('change', function (event) {
-    let URL_DOG = `https://dog.ceo/api/breed/${event.target.value}/images/random`;
-    fetchDogImage(URL_DOG);
+    let urlDog = `https://dog.ceo/api/breed/${event.target.value}/images/random`;
+    fetchDog(urlDog);
 });
 
-function fetchDogImage(URL) {
-    loader.style.display = "block";
+function fetchDog(URL) {
+    spinner.classList.add("show");
+    imageDog.classList.remove("show");
     fetch(URL)
         .then(function (response) {
             return response.json();
@@ -38,9 +39,9 @@ function fetchDogImage(URL) {
 }
 
 imageDog.addEventListener('load', function (event) {
-    loader.style.display = "none";
+    spinner.classList.remove("show");
+    imageDog.classList.add("show");
 })
-
 
 fetchBreeds();
 
