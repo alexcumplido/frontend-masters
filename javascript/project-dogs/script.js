@@ -21,31 +21,28 @@ function fetchBreeds() {
         })
 }
 
-function fetchDogImage(event) {
+select.addEventListener('change', function (event) {
+    let URL_DOG = `https://dog.ceo/api/breed/${event.target.value}/images/random`;
+    fetchDogImage(URL_DOG);
+});
+
+function fetchDogImage(URL) {
     loader.style.display = "block";
-    let dog = event.target.value;
-    const URL_IMAGE_DOG = `https://dog.ceo/api/breed/${dog}/images/random`;
-    fetch(URL_IMAGE_DOG)
+    fetch(URL)
+        .then(function (response) {
+            return response.json();
+        })
         .then(function (data) {
-            return data.url;
+            imageDog.src = data.message;
         })
-        .then(function (imageUrl) {
-            imageDog.src = imageUrl;
-            imageDog.alt = dog;
-        })
-
 }
-
-fetchBreeds();
 
 imageDog.addEventListener('load', function (event) {
     loader.style.display = "none";
 })
 
-select.addEventListener('change', function (event) {
-    fetchDogImage(event);
-});
 
+fetchBreeds();
 
 
 
