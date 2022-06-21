@@ -2,11 +2,14 @@ const URL_BREED_DOGS = "https://dog.ceo/api/breeds/list/all";
 let select = document.querySelector(".breed-select");
 let targetDog = document.querySelector(".target-dog");
 let imageDog = document.querySelector(".target-dog-img");
+let loader = document.querySelector(".loader");
 
 function fetchBreeds() {
     fetch(URL_BREED_DOGS)
-        .then((response) => response.json())
-        .then((data) => {
+        .then(function (response) {
+            return response.json()
+        })
+        .then(function (data) {
             const breedsObject = data.message;
             const breedsArray = Object.keys(breedsObject);
             for (let i = 0; i < breedsArray.length; i++) {
@@ -19,11 +22,14 @@ function fetchBreeds() {
 }
 
 function fetchDogImage(event) {
+    loader.style.display = "block";
     let dog = event.target.value;
     const URL_IMAGE_DOG = `https://dog.ceo/api/breed/${dog}/images/random`;
     fetch(URL_IMAGE_DOG)
-        .then((data) => data.url)
-        .then((imageUrl) => {
+        .then(function (data) {
+            return data.url;
+        })
+        .then(function (imageUrl) {
             if (targetDog.imageDog) {
                 targetDog.removeChild(imageDog);
             }
@@ -31,12 +37,19 @@ function fetchDogImage(event) {
             imageDog.alt = dog;
             targetDog.appendChild(imageDog);
         })
+
 }
+
+fetchBreeds();
+
+imageDog.addEventListener('load', function (event) {
+    loader.style.display = "none";
+})
 
 select.addEventListener('change', function (event) {
     fetchDogImage(event);
 });
 
-fetchBreeds();
+
 
 
