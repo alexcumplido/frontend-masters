@@ -30,12 +30,8 @@ function fetchDogImage(event) {
             return data.url;
         })
         .then(function (imageUrl) {
-            if (targetDog.imageDog) {
-                targetDog.removeChild(imageDog);
-            }
             imageDog.src = imageUrl;
             imageDog.alt = dog;
-            targetDog.appendChild(imageDog);
         })
 
 }
