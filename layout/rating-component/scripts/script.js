@@ -1,8 +1,8 @@
-const modalRating = document.querySelector(".rating");
-const modalThankYou = document.querySelector(".rating_thankyou");
+const modalRating = document.querySelector(".modal_rating");
+const modalThankYou = document.querySelector(".modal_thankyou");
 const btnGroup = document.querySelectorAll(".btn-rating");
 const btnSubmit = document.querySelector(".btn-submit");
-const spanRate = document.querySelector(".rate");
+const spanRate = document.querySelector(".rate-counter");
 let rate = null;
 
 for (let i = 0; i < btnGroup.length; i++) {
@@ -19,6 +19,7 @@ function rateButton(event) {
     }
     rate = parseInt(event.target.innerText);
     event.target.classList.add("btn-rating-active");
+    btnSubmit.removeAttribute('disabled');
 }
 
 btnSubmit.addEventListener('click', function (event) {
