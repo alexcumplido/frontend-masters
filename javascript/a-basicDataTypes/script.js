@@ -1,5 +1,5 @@
 // Primitive data type : value that is not an object and has no methods.
-// Literal value : piece of actual data and not result of calculation.
+// Literal value : piece of actual data and not result of a calculation.
 // 7 types: string, number, bigint, boolean, undefined, symbol, and null.
 
 //Numbers: JS do not distinguish between floats and integers, they are both numbers
@@ -26,37 +26,39 @@ var object = {
     name: "Alexandre"
 }
 
-
 // To reference and hold values JS provide bindings (variables)
-// Variable references a value using keywords: const, let, var.
+// A represnetation of some location in memmory
+// Pointing a reference of a value in memmory
+// Retrieving a variable means retrieving what is referenced in that memmory place
+
+// Created using keywords: const, let, var.
 // let or var can reference different values over its lifetime
+
 // const will reference same value over its lifetime, needs initialization.
 const FIRST_CONSTANT = "firstConstant"; // Can't asign other value.
 
+// declaring variable
+var firstVariable, secondVariable;
 
 // initializing variable (declaration + value assignment)
-var firstVar = "jsFundamentals";
-// declaring variable
-var secondVar;
-var thirdVar;
+var third = "jsFundamentals";
 
-// content of firstVar at this point in the code
-console.log(firstVar);
-
-// secondVar equals undefined since it has not yet been given a value
-console.log(secondVar);
+// content of variables at this point in the code (secondVar has not yet been given a value)
+console.log(firstVar, secondVar);
 
 //Garbage Collection: new memory allocation starts and js removes initial value since not used anymore
 firstVar = "2022";
 
-// asign to secondVar the value of another variable
-secondVar = firstVar;
-firstVar = "2023";
-
-console.log(firstVar, secondVar);
-
 // +, -, *,/ operators, they operate on the values they receive
 // = asignment operator
+// binary operators when there are 2 operands
+2 + 4;
+// unary operator when there is just 1 operand
+!true
+
+// Statement example
+// thirdVar is an expression of a variable
+// 2022 and 2023 are expressions of literal values
 // thirdVar holds results of the expression 2022 + 2023
 thirdVar = 2022 + 2023;
 
@@ -67,14 +69,3 @@ let numberThree = 2;
 
 console.log(numberOne++ * numberThree);
 console.log(++numberTwo * numberThree);
-// Fahrenheit to Centigrade : Celsius = 5 / 9 * (Fahrenheit - 32)
-var degFahren, degCent, noPrecedence;
-
-degFahren = prompt("Enter Fahrenheit degrees", 50);
-
-//Operator precedence: how operators are parsed concerning each other
-//Left-associativity: left to right ()  */    + -
-//Asignment operators are right-associativity
-degCent = 5 / 9 * (degFahren - 32);
-noPrecedence = 5 / 9 * degFahren - 32;
-console.log(degCent, noPrecedence);
