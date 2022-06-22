@@ -1,10 +1,7 @@
-// Arrays
 // Collection of values located via numerical association
 // Numerical association: Values are placed in indexed positions
-// Each position act as a santadrd variable array[i] = x;
-// Element: each place where each item of data is stored
-// Each element has an index to locate and acces each piece data
-// Each position in the array ( element[index] ) acts as standard variable
+// This index allow us to acces each value
+// Each position act as a santadrd variable array[index] = value;
 
 var array = [30, "Alexandre"];
 array[2] = "Bcn";
@@ -32,7 +29,6 @@ firstArray.splice(2, 1); // 1st arg. , index element to manipulate, 2nd arg., el
 firstArray.splice(2, 0, "four"); // remove-replace-add news elements, return an array with deleted elements
 firstArray.indexOf(0); // returns index of the first element that matches, -1 if no present
 firstArray.join(' '); // returns a new string concatenating all the elements in the array, separated default by commas or a specified separator;
-console.log(firstArray);
 
 // Array manipulation exercise
 let secretMessage = ['Learning', 'is', 'not', 'about', 'what', 'you', 'get', 'easily', 'the', 'first', 'time,', 'it', 'is', 'about', 'what', 'you', 'can', 'figure', 'out.', '-2015,', 'Chris', 'Pine,', 'Learn', 'JavaScript'];
@@ -66,48 +62,3 @@ personnel[2][2] = "Adress2";
 
 console.table(personnel);
 
-// Array manipulation with High Order Functions 
-let people = [
-    {
-        name: 'Alex',
-        year: 1992,
-        city: 'Barcelona'
-    },
-    {
-        name: 'Laura',
-        year: 1988,
-        city: 'Salamanca'
-    },
-    {
-        name: 'Mixeta',
-        year: 2016,
-        city: 'Groundcity'
-    },
-    {
-        name: 'Mama',
-        year: 1960,
-        city: 'Barcelona'
-    },
-]
-
-function cloneArray(array) {
-    let newArr = array.map(item => {
-        return {
-            ...item
-        };
-    });
-    return newArr;
-}
-
-let under2000 = cloneArray(people).filter((person) => {
-    return person.year > 2000;
-});
-
-let names = people.map(person => person.name);
-
-let years = [1, 2, 3];
-let ages = years.reduce((accumulator, current) => {
-    return accumulator += current;
-});
-
-console.log(ages);

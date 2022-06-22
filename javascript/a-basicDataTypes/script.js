@@ -1,19 +1,38 @@
+// Primitive data type : value that is not an object and has no methods.
+// Literal value : piece of actual data and not result of calculation.
+// 7 types: string, number, bigint, boolean, undefined, symbol, and null.
+
+//Numbers: JS do not distinguish between floats and integers, they are both numbers
+console.log(typeof 4.5, typeof 30);
+
+// Strings: a collection of characters
+var greeting = "Hello ";
+
+// Boolean
+true
+false
+
+// Represent empty values, emptyness for the most part represent the same
+undefined
+null
+
+//Non primitive
+//Arrays
+var array = [1, 2, 3]
+
+//Objects 
+//Collection of values. Values are given position - names locator (property-key)
+var object = {
+    name: "Alexandre"
+}
+
+
 // To reference and hold values JS provide bindings (variables)
 // Variable references a value using keywords: const, let, var.
 // let or var can reference different values over its lifetime
-
-let variable;
-var otherVariabe;
-
 // const will reference same value over its lifetime, needs initialization.
-
 const FIRST_CONSTANT = "firstConstant"; // Can't asign other value.
 
-// Fragment of code that produces value is called expression
-// Primitive data type : value that is not an object and has no methods.
-// 7 types: string, number, bigint, boolean, undefined, symbol, and null.
-// Literal value : piece of actual data and not result of calculation.
-// Are immutable. Can be replaced but not altered.
 
 // initializing variable (declaration + value assignment)
 var firstVar = "jsFundamentals";
