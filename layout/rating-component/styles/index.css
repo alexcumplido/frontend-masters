@@ -3,16 +3,17 @@ button {
 }
 
 .rating {
+    display: none;
     outline: 1px solid black;
-}
-
-.show {
-    display: block;
 }
 
 .rating_thankyou {
     display: none;
     outline: 1px solid red;
+}
+
+.show {
+    display: block;
 }
 
 .btn-rating-active {
