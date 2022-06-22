@@ -1,4 +1,7 @@
-// Array: can hold any type of data and store more than one item
+// Arrays
+// Collection of values located via numerical association
+// Numerical association: Values are placed in indexed positions
+// Each position act as a santadrd variable array[i] = x;
 // Element: each place where each item of data is stored
 // Each element has an index to locate and acces each piece data
 // Each position in the array ( element[index] ) acts as standard variable

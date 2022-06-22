@@ -1,4 +1,4 @@
-// Strings
+// Strings: a collection of characters
 // Concatenation : joning two strings
 var greeting = "Hello ";
 var userString = prompt("Please enter your name", "");
@@ -16,6 +16,11 @@ var dataPureString = "String";
 var nonConversion = parseInt(dataPureString); //Not a Number NaN
 console.log(isNaN(dataString));
 console.log(isNaN(dataPureString));
+
+
+//Numbers 
+//JS do not distinguish between floats and integers, they are both numbers
+console.log(typeof 4.5, typeof 30);
 
 
 //Math or number object
