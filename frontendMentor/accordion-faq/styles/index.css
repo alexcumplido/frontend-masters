@@ -12,7 +12,11 @@ ul {
     align-items: center;
     justify-content: space-between;
     padding: 1rem;
+    font-weight: 700;
     border-top: 1px solid var(--grayishBlue);
+}
+
+.accordion__item:last-child {
     border-bottom: 1px solid var(--grayishBlue);
 }
 
@@ -24,6 +28,7 @@ ul {
 .accordion-text {
     display: none;
     margin: 1rem 0;
+    font-weight: initial;
 }
 
 .show {
