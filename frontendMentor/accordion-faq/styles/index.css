@@ -2,7 +2,12 @@
     margin: 0.5rem;
 }
 
+ul {
+    list-style: none;
+}
+
 .accordion__item {
+    padding: 1rem;
     border-top: 1px solid var(--grayishBlue);
     border-bottom: 1px solid var(--grayishBlue);
 }
@@ -10,4 +15,12 @@
 .accordion__item div {
     display: flex;
     justify-content: space-between;
+}
+
+.accordion-text {
+    display: none;
+}
+
+.show {
+    display: block;
 }
