@@ -1,0 +1,13 @@
+.accordion {
+    margin: 0.5rem;
+}
+
+.accordion__item {
+    border-top: 1px solid var(--grayishBlue);
+    border-bottom: 1px solid var(--grayishBlue);
+}
+
+.accordion__item div {
+    display: flex;
+    justify-content: space-between;
+}
