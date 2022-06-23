@@ -1,18 +1,26 @@
 let accordionItems = document.querySelectorAll('.accordion__item');
 let accordionText = document.querySelectorAll('.accordion-text');
 let currentActive = null;
+let eventId;
 
-accordionItems.forEach(function (item) {
+accordionItems.forEach((item) => {
     item.addEventListener(('click'), function (event) {
-
-        let eventId = parseInt(event.target.id);
+        eventId = parseInt(event.currentTarget.id);
         if (currentActive === null) {
             accordionText[eventId].classList.add("show");
             currentActive = eventId;
+        } else if (currentActive === eventId) {
+            accordionText[parseInt(currentActive)].classList.remove("show");
+            currentActive = null
         } else {
-            accordionText[eventId].classList.remove("show");
+            accordionText[parseInt(currentActive)].classList.remove("show");
             accordionText[eventId].classList.add("show");
             currentActive = eventId;
         }
-    })
+    });
 });
+
+
+/*
+https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events#event_bubbling_and_capture
+*/

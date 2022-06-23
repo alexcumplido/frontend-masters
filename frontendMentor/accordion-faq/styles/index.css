@@ -7,18 +7,23 @@ ul {
 }
 
 .accordion__item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
     padding: 1rem;
     border-top: 1px solid var(--grayishBlue);
     border-bottom: 1px solid var(--grayishBlue);
 }
 
-.accordion__item div {
-    display: flex;
-    justify-content: space-between;
+.accordion__item svg {
+    margin-left: auto;
+
 }
 
 .accordion-text {
     display: none;
+    margin: 1rem 0;
 }
 
 .show {
