@@ -1,11 +1,11 @@
-.modal_thankyou {
-    display: none;
-}
-
 .modal_thankyou .logo {
     padding: 2rem;
     margin-right: initial;
     background-color: none;
+}
+
+.modal_thankyou .rating__description {
+    align-self: center;
 }
 
 .rate-info {

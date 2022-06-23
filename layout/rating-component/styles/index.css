@@ -1,8 +1,9 @@
 .modal {
+    display: none;
     width: 400px;
     padding: 2rem;
-    background: var(--veryDarkBlue);
     border-radius: 1rem;
+    background: var(--veryDarkBlue);
     color: var(--white);
 }
 
@@ -11,14 +12,6 @@
     flex-direction: column;
     align-items: center;
     gap: 2rem;
-}
-
-.modal_rating {
-    display: none;
-}
-
-.modal_thankyou {
-    display: none;
 }
 
 .show {
@@ -43,9 +36,6 @@
     color: var(--lightGray);
 }
 
-.modal_thankyou .rating__description {
-    align-self: center;
-}
 
 .btn-rating-group {
     align-self: stretch;
