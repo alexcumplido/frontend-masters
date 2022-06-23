@@ -4,9 +4,7 @@ let currentActive = null;
 let eventId;
 
 accordionItems.forEach((item) => {
-
     item.addEventListener(('click'), function (event) {
-
         eventId = parseInt(event.currentTarget.id);
 
         if (currentActive === null) {
