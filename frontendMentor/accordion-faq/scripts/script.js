@@ -10,17 +10,12 @@ accordionItems.forEach((item) => {
             accordionText[eventId].classList.add("show");
             currentActive = eventId;
         } else if (currentActive === eventId) {
-            accordionText[parseInt(currentActive)].classList.remove("show");
-            currentActive = null
+            accordionText[currentActive].classList.remove("show");
+            currentActive = null;
         } else {
-            accordionText[parseInt(currentActive)].classList.remove("show");
+            accordionText[currentActive].classList.remove("show");
             accordionText[eventId].classList.add("show");
             currentActive = eventId;
         }
     });
 });
-
-
-/*
-https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events#event_bubbling_and_capture
-*/
