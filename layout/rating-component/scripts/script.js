@@ -2,7 +2,7 @@ const modalRating = document.querySelector(".modal_rating");
 const modalThankYou = document.querySelector(".modal_thankyou");
 const btnGroup = document.querySelectorAll(".btn-rating");
 const btnSubmit = document.querySelector(".btn-submit");
-const spanRate = document.querySelector(".rate-counter");
+const rateInfo = document.querySelector(".rate-counter");
 let rate = null;
 
 for (let i = 0; i < btnGroup.length; i++) {
@@ -12,14 +12,16 @@ for (let i = 0; i < btnGroup.length; i++) {
 }
 
 function rateButton(event) {
-    for (let i = 0; i < btnGroup.length; i++) {
-        if (parseInt(btnGroup[i].innerText) === rate) {
-            btnGroup[i].classList.remove("btn-rating_active");
+    if (parseInt(event.target.innerText) !== rate) {
+        for (let i = 0; i < btnGroup.length; i++) {
+            if (parseInt(btnGroup[i].innerText) === rate) {
+                btnGroup[i].classList.remove("btn-rating_active");
+            }
         }
+        rate = parseInt(event.target.innerText);
+        event.target.classList.add("btn-rating_active");
+        btnSubmit.removeAttribute('disabled');
     }
-    rate = parseInt(event.target.innerText);
-    event.target.classList.add("btn-rating_active");
-    btnSubmit.removeAttribute('disabled');
 }
 
 btnSubmit.addEventListener('click', function (event) {
@@ -30,33 +32,12 @@ function validate(rate) {
     if (typeof rate !== "number") {
         return;
     } else {
+
         printModal();
     }
 }
 function printModal() {
     modalRating.classList.remove("show");
     modalThankYou.classList.add("show");
-    spanRate.innerText = rate;
+    rateInfo.innerText = rate;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
