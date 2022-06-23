@@ -14,11 +14,11 @@ for (let i = 0; i < btnGroup.length; i++) {
 function rateButton(event) {
     for (let i = 0; i < btnGroup.length; i++) {
         if (parseInt(btnGroup[i].innerText) === rate) {
-            btnGroup[i].classList.remove("btn-rating-active");
+            btnGroup[i].classList.remove("btn-rating_active");
         }
     }
     rate = parseInt(event.target.innerText);
-    event.target.classList.add("btn-rating-active");
+    event.target.classList.add("btn-rating_active");
     btnSubmit.removeAttribute('disabled');
 }
 

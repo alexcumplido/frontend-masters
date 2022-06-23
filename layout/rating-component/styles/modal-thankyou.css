@@ -4,10 +4,6 @@
     background-color: none;
 }
 
-.modal_thankyou .rating__description {
-    align-self: center;
-}
-
 .rate-info {
     display: block;
     padding: 0.5rem 1rem;
@@ -20,10 +16,6 @@
     font-weight: 700;
 }
 
-.modal_thankyou .rating__text {
+.modal_thankyou .modal__text {
     text-align: center;
-}
-
-.modal_thankyou .rating__description {
-    align-self: center;
 }
