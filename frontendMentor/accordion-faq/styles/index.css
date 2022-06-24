@@ -22,7 +22,6 @@ ul {
 
 .accordion__item svg {
     margin-left: auto;
-
 }
 
 .accordion-text {
@@ -33,4 +32,8 @@ ul {
 
 .show {
     display: block;
+}
+
+.arrow-rotate {
+    transform: rotate(180deg);
 }
