@@ -1,0 +1,13 @@
+fieldset {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.span-error {
+    display: none;
+    margin-left: auto;
+    font-size: 0.75rem;
+    color: var(--red);
+}
