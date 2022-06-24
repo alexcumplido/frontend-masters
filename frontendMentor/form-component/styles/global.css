@@ -15,3 +15,9 @@ body {
     font-size: var(--fontSize);
     font-family: 'Poppins', sans-serif;
 }
+
+button,
+input {
+    font-family: inherit;
+    font-size: 100%;
+}
