@@ -11,7 +11,11 @@ html {
 }
 
 body {
-    font-family: 'Kumbh Sans', sans-serif;
     min-height: 100vh;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Kumbh Sans', sans-serif;
+    font-size: var(--fontSize);
+    background-color: var(--softViolet);
 }
