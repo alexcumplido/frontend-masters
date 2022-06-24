@@ -1,0 +1,24 @@
+.intro {
+    padding: 8rem 2rem;
+    height: 95vh;
+    margin: 0 auto;
+    max-width: 1480px;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.name {
+    font-family: var(--mono);
+}
+
+.intro span {
+    display: block;
+    font-size: 3rem;
+    font-family: var(--sans);
+    color: var(--aqua);
+}
+
+.intro h2 {
+    font-size: 3rem;
+    font-weight: 400;
+}

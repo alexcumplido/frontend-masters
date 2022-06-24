@@ -1,0 +1,34 @@
+.gradient {
+    height: 2px;
+    background: linear-gradient(90deg, rgba(255, 23, 228, 1) 0%, rgba(134, 251, 251, 1) 100%);
+}
+
+.gradient-inverted {
+    height: 2px;
+    background: linear-gradient(270deg, rgba(255, 23, 228, 1) 0%, rgba(134, 251, 251, 1) 100%);
+}
+
+.section-banner {
+    text-align: center;
+    padding: 3rem 0;
+    background-color: var(--plum);
+}
+
+.ul-banner-li {
+    display: inline-block;
+    margin: 1rem 1rem;
+}
+
+.ul-banner-li a {
+    display: flex;
+    padding: 0.5rem;
+}
+
+.ul-banner-li [class*="fa-"] {
+    font-size: 200%;
+}
+
+.section-banner p {
+    margin: 1rem;
+    font-size: 0.8rem;
+}
