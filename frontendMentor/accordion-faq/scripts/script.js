@@ -3,21 +3,21 @@ let accordionText = document.querySelectorAll('.accordion-text');
 let currentActive = null;
 let eventId;
 
-accordionItems.forEach((item) => {
-    item.addEventListener(('click'), function (event) {
 
-        eventId = parseInt(event.currentTarget.id);
+for (let i = 0; i < accordionItems.length; i++) {
 
+    accordionItems[i].addEventListener(('click'), function () {
+        eventId = i;
         if (currentActive === null) {
-            accordionText[eventId].classList.add("show");
-            currentActive = eventId;
-        } else if (currentActive === eventId) {
+            accordionText[i].classList.add("show");
+            currentActive = i;
+        } else if (currentActive === i) {
             accordionText[currentActive].classList.remove("show");
             currentActive = null;
         } else {
             accordionText[currentActive].classList.remove("show");
-            accordionText[eventId].classList.add("show");
-            currentActive = eventId;
+            accordionText[i].classList.add("show");
+            currentActive = i;
         }
     });
-});
+}
