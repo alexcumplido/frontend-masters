@@ -1,6 +1,6 @@
 :root {
     --maxWidthDesktop: 1440px;
-    --maxWidthMobile: 375px;
+    --minWidthMobile: 375px;
 
     --softRed: hsl(14, 88%, 65%);
     --softViolet: hsl(273, 75%, 66%);

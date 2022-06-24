@@ -2,31 +2,18 @@
     margin: 0.5rem;
 }
 
-ul {
-    list-style: none;
-}
-
 .accordion__item {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem;
-    font-weight: 700;
-    border-top: 1px solid var(--grayishBlue);
-}
-
-.accordion__item:last-child {
+    padding: 1rem 0;
     border-bottom: 1px solid var(--grayishBlue);
-}
-
-.accordion__item svg {
-    margin-left: auto;
 }
 
 .accordion-text {
     display: none;
-    margin: 1rem 0;
+    margin-top: 1rem;
     font-weight: initial;
 }
 
