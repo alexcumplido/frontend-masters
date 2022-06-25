@@ -20,15 +20,13 @@ input:focus:invalid {
     outline: none;
 }
 
-.error {
+.error-emailAdress {
     width: 100%;
     padding: 0;
     font-size: 80%;
-    border-radius: 0 0 5px 5px;
-    color: var(--white);
-    background-color: var(--red);
+    color: var(--red);
 }
 
-.error.active {
-    padding: 0.3rem;
+.error-emailAdress.active {
+    padding: 0.5em;
 }
