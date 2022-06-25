@@ -27,14 +27,14 @@
             </div>
             <form class="form" action="" method="post">    
                 <fieldset>
-                    <input type="text" id="firstName" name="first_name"  placeholder="First Name"  autocomplete /> 
-                    <span class="span-error">A valid letter fisr name</span>
-                    <input type="text" id="lastName" name="last_name"  placeholder="Last Name"  autocomplete />
-                    <span class="span-error">A valid letter fisr name</span>
-                    <input type="email" id="emailAdress" name="email_adress" placeholder="Email Adress"  autocomplete />
-                    <span class="span-error">A valid email adress</span>
-                    <input type="password" id="password" name="password"  placeholder="password"  autocomplete />    
-                    <span class="span-error">8 characters and least 1 letter and 1 number</span>
+                    <input type="text" id="firstName" name="first_name"  placeholder="First Name" pattern="/^[a-z ,.'-]+$/i" required autocomplete/> 
+                    <span class="error-firstName"></span>
+                    <input type="text" id="lastName" name="last_name"  placeholder="Last Name" pattern="/^[a-z ,.'-]+$/i" required autocomplete/>
+                    <span class="error-lastName"></span>
+                    <input type="email" id="emailAdress" name="email_adress" placeholder="Email Adress" pattern="/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g" required autocomplete />
+                    <span class="error-email"></span>
+                    <input type="password" id="password" name="password"  placeholder="password" minlength="8" pattern="/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/" required autocomplete />    
+                    <span class="error-password"></span>
                 </fieldset>
                 <button class="btn-submit" type="submit">Claim your free trial</button>
                 <span>By clicking the button, you are agreeing to our Terms and Services</span>
@@ -43,3 +43,4 @@
         <script src="./scripts/script.js"></script>
     </body>
 </html>
+

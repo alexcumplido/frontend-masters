@@ -11,3 +11,24 @@ fieldset {
     font-size: 0.75rem;
     color: var(--red);
 }
+
+input:invalid {
+    border-color: 1px solid var(--red);
+}
+
+input:focus:invalid {
+    outline: none;
+}
+
+.error {
+    width: 100%;
+    padding: 0;
+    font-size: 80%;
+    border-radius: 0 0 5px 5px;
+    color: var(--white);
+    background-color: var(--red);
+}
+
+.error.active {
+    padding: 0.3rem;
+}

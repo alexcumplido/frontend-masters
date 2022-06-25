@@ -11,22 +11,22 @@ const inputErrors = document.querySelectorAll('.span-error');
 const submitButton = document.querySelector('.btn-submit');
 const form = document.querySelector('form');
 
-function validateInputs() {
-    debugger;
-    let validation = false;
-    validation = (regexFullName.test(inputFirstName.value)) ? true : false;
-    validation = (regexFullName.test(inputLastName.value)) ? true : false;
-    validation = (regexEmail.test(inputEmail.value)) ? true : false;
-    validation = (regexEmail.test(inputPassword.value)) ? true : false;
-    return validation;
-}
+const spanError = document.querySelector('.error');
 
-form.addEventListener('submit', function (event) {
-    if (!validateInputs()) {
-        event.preventDefault();
-    }
-})
+// function validateInputs() {
+//     let validation = false;
+//     validation = (regexFullName.test(inputFirstName.value)) ? true : false;
+//     validation = (regexFullName.test(inputLastName.value)) ? true : false;
+//     validation = (regexEmail.test(inputEmail.value)) ? true : false;
+//     validation = (regexPass.test(inputPassword.value)) ? true : false;
+//     return validation;
+// }
 
+// form.addEventListener('submit', function (event) {
+//     if (!validateInputs()) {
+//         event.preventDefault();
+//     }
+// })
 
 
 // Add eventListeners to stored inputs
