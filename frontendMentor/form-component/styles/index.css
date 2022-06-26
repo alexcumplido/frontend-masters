@@ -15,8 +15,10 @@ fieldset {
 
 input {
     display: block;
+    position: relative;
     width: 100%;
     align-self: flex-start;
+    padding: 0.5rem;
 }
 
 input:invalid {
@@ -43,4 +45,10 @@ input:focus:invalid {
 
 button {
     align-self: stretch;
+}
+
+.input-error {
+    background-image: url("../images/icon-error.svg");
+    background-repeat: no-repeat;
+    background-position: 95%;
 }

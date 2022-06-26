@@ -29,14 +29,16 @@ function validateFirstName() {
         validate = false;
         errorFirstName.textContent = 'First Name can not be empty.';
         errorFirstName.classList.add('active');
+        firstName.classList.add('input-error');
     } else if (regexFirstName.test(firstName.value) === false) {
-
         validate = false;
         errorFirstName.textContent = 'First Name can not containt numeric or special values.';
         errorFirstName.classList.add('active');
+        firstName.classList.add('input-error');
     } else {
         errorFirstName.textContent = '';
         errorFirstName.classList.remove('active');
+        firstName.classList.remove('input-error');
     }
     return validate;
 }
@@ -47,14 +49,16 @@ function validateLastName() {
         validate = false;
         errorLastName.textContent = 'Last Name can not be empty.';
         errorLastName.classList.add('active');
+        lastName.classList.add('input-error');
     } else if (regexLastName.test(lastName.value) === false) {
-
         validate = false;
         errorLastName.textContent = 'Last Name can not containt numeric or special values.';
         errorLastName.classList.add('active');
+        lastName.classList.add('input-error');
     } else {
         errorLastName.textContent = '';
         errorLastName.classList.remove('active');
+        lastName.classList.remove('input-error');
     }
     return validate;
 }
@@ -65,13 +69,16 @@ function validateEmail() {
         validate = false;
         errorEmail.textContent = 'Email can not be empty.';
         errorEmail.classList.add('active');
+        email.classList.add('input-error');
     } else if (regexEmail.test(email.value) === false) {
         validate = false;
         errorEmail.textContent = 'Email need to be a valid email.';
         errorEmail.classList.add('active');
+        email.classList.add('input-error');
     } else {
         errorEmail.textContent = '';
         errorEmail.classList.remove('active');
+        email.classList.remove('input-error');
     }
     return validate;
 }
@@ -82,13 +89,16 @@ function validatePassword() {
         validate = false;
         errorPassword.textContent = 'Password can not be empty.';
         errorPassword.classList.add('active');
+        password.classList.add('input-error')
     } else if (regexPass.test(password.value) === false) {
         validate = false;
         errorPassword.textContent = 'Password need to be a valid password.';
         errorPassword.classList.add('active');
+        password.classList.add('input-error')
     } else {
         errorPassword.textContent = '';
         errorPassword.classList.remove('active');
+        password.classList.remove('input-error')
     }
     return validate;
 }
