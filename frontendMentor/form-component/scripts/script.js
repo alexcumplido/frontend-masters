@@ -24,6 +24,7 @@ form.addEventListener('submit', function (event) {
 });
 
 function validateFirstName() {
+    debugger;
     let validate = true;
     if (firstName.value === "") {
         validate = false;
