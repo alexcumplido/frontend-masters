@@ -55,13 +55,14 @@ async function fetchResponse() {
                 let bar = document.createElement('div');
                 let day = document.createElement('div');
                 let barSpan = document.createElement('span');
+
                 barSpan.classList.add('bar-span');
                 barSpan.innerText = `${responseFetched[i].amount}$`;
                 bar.appendChild(barSpan);
-                day.classList.add('day');
-                day.innerText = responseFetched[i].day;
                 bar.classList.add('bar');
                 bar.style.height = `${responseFetched[i].amount * 4}px`;
+                day.classList.add('day');
+                day.innerText = responseFetched[i].day;
 
                 barWrapper.appendChild(bar);
                 dayWrapper.appendChild(day);
@@ -77,6 +78,3 @@ async function fetchResponse() {
 }
 fetchResponse();
 
-function createBars(object) {
-
-}
