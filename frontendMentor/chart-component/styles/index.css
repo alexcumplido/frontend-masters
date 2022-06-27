@@ -13,7 +13,20 @@
 .bar {
     width: 3rem;
     border-radius: 0.25rem;
-    background-color: var(--softRed)
+    background-color: var(--softRed);
+}
+
+.bar-span {
+    padding: 0.25rem rem;
+    height: 1rem;
+    width: 2rem;
+    color: var(--paleOrange);
+    background-color: var(--darkBrown);
+}
+
+.bar:hover {
+    background-color: var(--lightRed);
+    cursor: pointer;
 }
 
 .day {

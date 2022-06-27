@@ -52,13 +52,17 @@ async function fetchResponse() {
         .then(function (processedResponse) {
             const responseFetched = JSON.parse(processedResponse);
             for (let i = 0; i < responseFetched.length; i++) {
-                debugger;
                 let bar = document.createElement('div');
                 let day = document.createElement('div');
+                let barSpan = document.createElement('span');
+                barSpan.classList.add('bar-span');
+                barSpan.innerText = `${responseFetched[i].amount}$`;
+                bar.appendChild(barSpan);
                 day.classList.add('day');
                 day.innerText = responseFetched[i].day;
                 bar.classList.add('bar');
                 bar.style.height = `${responseFetched[i].amount * 4}px`;
+
                 barWrapper.appendChild(bar);
                 dayWrapper.appendChild(day);
                 totalAmount += responseFetched[i].amount;
