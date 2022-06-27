@@ -21,13 +21,6 @@
 // User see current day's bar in a different colour
 
 // Create variables
-// variable for array of objects from localJson
-// variables that selects bars class
-// variable that selects days class
-// variable that selects bar-wrapper element
-// variable that selects day-wrapper element
-// function that receives and transform data from JSON
-
 // function that iterates over jsontransformed and extract values
 // function that creates elements representing bars
 // function that creates elements representing days
@@ -43,21 +36,43 @@
 
 
 const urlRequest = "./json/data.json";
-let responseFetched;
+
+const barClass = document.querySelector('.bar');
+const dayClass = document.querySelector('.day');
+const barWrapper = document.querySelector('.bar-wrapper');
+const dayWrapper = document.querySelector('.day-wrapper');
+const statsTotal = document.querySelector('.stats-total-span')
+let totalAmount = 0;
 
 async function fetchResponse() {
-
     fetch(urlRequest)
         .then(function (response) {
             return response.text();
         })
         .then(function (processedResponse) {
-            responseFetched = JSON.parse(processedResponse);
+            const responseFetched = JSON.parse(processedResponse);
+            for (let i = 0; i < responseFetched.length; i++) {
+                debugger;
+                let bar = document.createElement('div');
+                let day = document.createElement('div');
+                day.classList.add('day');
+                day.innerText = responseFetched[i].day;
+                bar.classList.add('bar');
+                bar.style.height = `${responseFetched[i].amount * 4}px`;
+                barWrapper.appendChild(bar);
+                dayWrapper.appendChild(day);
+                totalAmount += responseFetched[i].amount;
+            }
+            statsTotal.innerText = `${totalAmount}$`;
         })
         .catch(function (error) {
             console.log(error)
         });
-    return responseFetched;
+
 
 }
 fetchResponse();
+
+function createBars(object) {
+
+}

@@ -1,0 +1,22 @@
+.bar-wrapper {
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: flex-end;
+    gap: 0.5rem;
+}
+
+.day-wrapper {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.bar {
+    width: 3rem;
+    border-radius: 0.25rem;
+    background-color: var(--softRed)
+}
+
+.day {
+    text-align: center;
+    width: 3rem;
+}
