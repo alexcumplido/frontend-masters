@@ -1,14 +1,35 @@
-// We provide the data for the chart in a local`data.json` file.So you can use that to dynamically add the bars if you choose.
+// 1. Problem analysis(Understand)
+// 2. Define features and user flow
+// 3. Structure variables and functions
+// 4. Pseudocode
+// 5. Implement programm
 
-// Your users should be able to:
+// Input data
+// Access - manipulate data
+// Output data
 
-// - View the bar chart and hover over the individual bars to see the correct amounts for each day
-// - See the current day's bar highlighted in a different colour to the other bars
-// - View the optimal layout for the content depending on their device's screen size
-// - See hover states for all interactive elements on the page
-// - ** Bonus **: See dynamically generated bars based on the data provided in the local JSON file
 
-// Understand how Chart.js works
-// Create a sample example
+//See dynamically generated bars based on the data provided in the local JSON file
 
-// 
+// User see each bar representing associated data
+// User hover over the individual bar an see associated
+// User see current day's bar in a different colour
+
+// Import local JSON file
+// Selection and creation of elements in the DOM
+
+// Receive data from JSON
+// For each object create two elements
+// One for day
+// One for amount
+
+// Apped
+
+// If day matches with current day add special styles to day element
+// Add width in px 
+
+function init() {
+    console.log('Document loaded')
+}
+
+document.addEventListener('DOMContentLoaded', init);
