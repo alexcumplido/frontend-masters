@@ -1,5 +1,8 @@
 .chart-component {
+    max-width: var(--maxWidthMobile);
     background-color: var(--cream);
+    margin: 0 auto;
+    padding-top: 3rem;
 }
 
 .balance {
@@ -20,11 +23,11 @@
 }
 
 .balance-text span:first-child {
-    font-size: 80%;
+    font-size: 0.8rem;
 }
 
 .balance-text span:last-child {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     font-weight: 700;
 }
 
@@ -41,13 +44,6 @@
     gap: 1rem;
 }
 
-.day-wrapper {
-    display: flex;
-    gap: 1rem;
-    padding-bottom: 1.5rem;
-    border-bottom: 1px solid var(--lightGray);
-}
-
 .bar {
     position: relative;
     width: 3rem;
@@ -56,16 +52,16 @@
 }
 
 .bar-span {
-    text-align: center;
-    padding: 0.25rem 0.5rem;
     display: none;
-    border-radius: 0.25rem;
-    color: var(--paleOrange);
-    background-color: var(--darkBrown);
+    padding: 0.25rem 0.5rem;
     position: absolute;
     left: -0.50rem;
     top: -2.25rem;
     font-size: 90%;
+    text-align: center;
+    border-radius: 0.25rem;
+    color: var(--paleOrange);
+    background-color: var(--darkBrown);
 }
 
 .bar-span-active {
@@ -73,13 +69,8 @@
 }
 
 .bar:hover {
-    background-color: var(--lightRed);
     cursor: pointer;
-}
-
-.day {
-    text-align: center;
-    width: 3rem;
+    background-color: var(--lightRed);
 }
 
 .bar-current-day {
@@ -88,6 +79,19 @@
 
 .bar-current-day:hover {
     background-color: var(--lightCyan);
+}
+
+.day-wrapper {
+    display: flex;
+    gap: 1rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--lightGray);
+}
+
+.day {
+    text-align: center;
+    width: 2rem;
+    font-size: 80%;
 }
 
 .bar-stats {
@@ -120,4 +124,11 @@
 .stats-total span:last-child {
     font-size: 1.5rem;
     font-weight: 700;
+}
+
+@media screen and (min-width: 550px) {
+    .day {
+        width: 3rem;
+        font-size: initial;
+    }
 }

@@ -13,9 +13,6 @@ html {
 body {
     max-width: var(--maxWidthDesktop);
     height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     font-size: var(--fontSize);
     font-family: var(--fontFamily);
     background-color: var(--cream);
