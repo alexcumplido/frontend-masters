@@ -35,17 +35,16 @@
 //On each creation assign corresponding day
 
 
-const urlRequest = "./json/data.json";
+const URL_REQUEST = "./json/data.json";
 
 const barClass = document.querySelector('.bar');
-const dayClass = document.querySelector('.day');
 const barWrapper = document.querySelector('.bar-wrapper');
 const dayWrapper = document.querySelector('.day-wrapper');
 const statsTotal = document.querySelector('.stats-total-span')
 let totalAmount = 0;
 
 async function fetchResponse() {
-    fetch(urlRequest)
+    fetch(URL_REQUEST)
         .then(function (response) {
             return response.text();
         })
@@ -53,16 +52,26 @@ async function fetchResponse() {
             const responseFetched = JSON.parse(processedResponse);
             for (let i = 0; i < responseFetched.length; i++) {
                 let bar = document.createElement('div');
+                let barLabel = document.createElement('span');
                 let day = document.createElement('div');
-                let barSpan = document.createElement('span');
 
-                barSpan.classList.add('bar-span');
-                barSpan.innerText = `${responseFetched[i].amount}$`;
-                bar.appendChild(barSpan);
+
+                barLabel.classList.add('bar-span');
+                barLabel.innerText = `${responseFetched[i].amount}$`;
+                bar.appendChild(barLabel);
                 bar.classList.add('bar');
                 bar.style.height = `${responseFetched[i].amount * 4}px`;
+
                 day.classList.add('day');
                 day.innerText = responseFetched[i].day;
+
+                bar.addEventListener('mouseover', function () {
+                    barLabel.classList.add('bar-span-active');
+                })
+
+                bar.addEventListener('mouseout', function () {
+                    barLabel.classList.remove('bar-span-active');
+                })
 
                 barWrapper.appendChild(bar);
                 dayWrapper.appendChild(day);
@@ -73,8 +82,7 @@ async function fetchResponse() {
         .catch(function (error) {
             console.log(error)
         });
-
-
 }
+
 fetchResponse();
 

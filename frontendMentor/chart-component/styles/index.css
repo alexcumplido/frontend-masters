@@ -2,26 +2,36 @@
     margin-bottom: 0.5rem;
     display: flex;
     align-items: flex-end;
-    gap: 0.5rem;
+    gap: 1rem;
 }
 
 .day-wrapper {
     display: flex;
-    gap: 0.5rem;
+    gap: 1rem;
 }
 
 .bar {
+    position: relative;
     width: 3rem;
     border-radius: 0.25rem;
     background-color: var(--softRed);
 }
 
 .bar-span {
-    padding: 0.25rem rem;
-    height: 1rem;
-    width: 2rem;
+    text-align: center;
+    padding: 0.25rem 0.5rem;
+    display: none;
+    border-radius: 0.25rem;
     color: var(--paleOrange);
     background-color: var(--darkBrown);
+    position: absolute;
+    left: -0.50rem;
+    top: -2.25rem;
+    font-size: 90%;
+}
+
+.bar-span-active {
+    display: block;
 }
 
 .bar:hover {
