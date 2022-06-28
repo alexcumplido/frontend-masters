@@ -93,7 +93,7 @@ function validatePassword() {
         password.classList.add('input-error')
     } else if (regexPass.test(password.value) === false) {
         validate = false;
-        errorPassword.textContent = 'Password need to be a valid password.';
+        errorPassword.textContent = 'Password neet to be at least 8 characters long, and include one letter and one number.';
         errorPassword.classList.add('active');
         password.classList.add('input-error')
     } else {
