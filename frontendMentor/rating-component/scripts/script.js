@@ -32,7 +32,6 @@ function validate(rate) {
     if (typeof rate !== "number") {
         return;
     } else {
-
         printModal();
     }
 }
