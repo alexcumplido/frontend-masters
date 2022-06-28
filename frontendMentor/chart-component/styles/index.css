@@ -1,5 +1,41 @@
+.chart-component {
+    background-color: var(--cream);
+}
+
+.balance {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 0.5rem;
+    color: var(--cream);
+    background-color: var(--softRed);
+}
+
+.balance-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+}
+
+.balance-text span:first-child {
+    font-size: 80%;
+}
+
+.balance-text span:last-child {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.chart-wrapper {
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    background-color: var(--white);
+}
+
 .bar-wrapper {
-    margin-bottom: 0.5rem;
+    margin: 3rem 0 1rem 0;
     display: flex;
     align-items: flex-end;
     gap: 1rem;
@@ -8,6 +44,8 @@
 .day-wrapper {
     display: flex;
     gap: 1rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--lightGray);
 }
 
 .bar {
@@ -50,4 +88,36 @@
 
 .bar-current-day:hover {
     background-color: var(--lightCyan);
+}
+
+.bar-stats {
+    padding-top: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.stats-total,
+.stats-relative {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.stats-relative {
+    align-items: flex-end;
+    font-size: 80%;
+}
+
+.stats-relative span:first-child {
+    font-weight: 700;
+}
+
+.stats-total span:first-child {
+    font-size: 80%;
+}
+
+.stats-total span:last-child {
+    font-size: 1.5rem;
+    font-weight: 700;
 }
