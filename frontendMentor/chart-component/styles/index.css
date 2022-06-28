@@ -43,3 +43,11 @@
     text-align: center;
     width: 3rem;
 }
+
+.bar-current-day {
+    background-color: var(--cyan);
+}
+
+.bar-current-day:hover {
+    background-color: var(--lightCyan);
+}

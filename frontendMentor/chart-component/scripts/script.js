@@ -16,23 +16,16 @@
 // Acess JSON object
 
 // OUTPUT
-// dynamically generated bars based on the data provided in the local JSON file
-// User hover over the individual bar and see its data
 // User see current day's bar in a different colour
 
 // Create variables
-// function that iterates over jsontransformed and extract values
-// function that creates elements representing bars
-// function that creates elements representing days
 
-
-// Import local JSON file
-// Iterate over data and in each iteration
-// Append two elements in corresponding wrappers
-// On bar-wrapper append:
-//In each creation style the width according data add px as height
-// On day-wrapper append:
-//On each creation assign corresponding day
+// If day matches with current day
+// Add special class
+// Create corresponding classes for current day and current day hover
+// Retrieve from Date object current day
+// Match agaisnt JSON object
+// If match apply created classes
 
 
 const URL_REQUEST = "./json/data.json";
@@ -42,6 +35,7 @@ const barWrapper = document.querySelector('.bar-wrapper');
 const dayWrapper = document.querySelector('.day-wrapper');
 const statsTotal = document.querySelector('.stats-total-span')
 let totalAmount = 0;
+const currentDay = new Date().toLocaleString('en-us', { weekday: 'short' }).toLowerCase();
 
 async function fetchResponse() {
     fetch(URL_REQUEST)
@@ -55,15 +49,18 @@ async function fetchResponse() {
                 let barLabel = document.createElement('span');
                 let day = document.createElement('div');
 
-
                 barLabel.classList.add('bar-span');
                 barLabel.innerText = `${responseFetched[i].amount}$`;
                 bar.appendChild(barLabel);
                 bar.classList.add('bar');
                 bar.style.height = `${responseFetched[i].amount * 4}px`;
 
+
                 day.classList.add('day');
                 day.innerText = responseFetched[i].day;
+                if (responseFetched[i].day === currentDay) {
+                    bar.classList.add('bar-current-day');
+                }
 
                 bar.addEventListener('mouseover', function () {
                     barLabel.classList.add('bar-span-active');
