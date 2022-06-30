@@ -61,6 +61,9 @@ console.log(Boolean(false));
 console.log(Boolean(undefined));
 
 // Truthy
+(function sayHello() {
+    console.log('hello');
+})();
 
+// function expressions
 
-var student
