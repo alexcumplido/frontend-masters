@@ -1,3 +1,4 @@
+var favoriteBooks = [];
 
 function addFavoriteBook(bookName) {
     if (!bookName.toLowerCase().includes('great')) {
@@ -11,8 +12,6 @@ function printFavoriteBooks() {
         console.log(`Book number ${i} in list is: ${favoriteBooks[i]}`);
     }
 }
-
-var favoriteBooks = [];
 
 addFavoriteBook("A Song of Ice and Fire");
 addFavoriteBook("The Great Gatsby");
