@@ -43,6 +43,3 @@ imageDog.addEventListener('load', function (event) {
 })
 
 fetchBreeds();
-
-
-

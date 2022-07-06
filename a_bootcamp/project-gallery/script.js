@@ -26,6 +26,3 @@ btnNext.addEventListener('click', function () {
         btnNext.setAttribute("disabled", true);
     }
 });
-
-
-
