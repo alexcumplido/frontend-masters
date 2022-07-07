@@ -32,17 +32,3 @@ async function fetchDog() {
 buttonDog.addEventListener('click', function (event) {
     fetchDog();
 });
-
-
-async function getTodos(URL) {
-    const response = await fetch(URL);
-    return await response.json();
-};
-
-Promise.all([
-    getTodos('./json/jsonA.json'),
-    getTodos('./json/jsonB.json'),
-])
-    .then(data => data.forEach(promise => console.log(promise)))
-    .catch(err => console.log(err));
-

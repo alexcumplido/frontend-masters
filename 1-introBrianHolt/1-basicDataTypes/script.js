@@ -1,6 +1,5 @@
 // Primitive data type : value that is not an object and has no methods.
-// Literal value : piece of actual data and not result of a calculation.
-// 7 types: string, number, bigint, boolean, undefined, symbol, and null.
+// Primitive string, number, bigint, boolean, undefined, symbol, and null.
 
 //Numbers: JS do not distinguish between floats and integers, they are both numbers
 console.log(typeof 4.5, typeof 30);

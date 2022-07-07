@@ -1,7 +1,7 @@
 // Collection of values located via numerical association
 // Numerical association: Values are placed in indexed positions
 // This index allow us to acces each value
-// Each position act as a santadrd variable array[index] = value;
+// Each position act as a santard variable array[index] = value;
 
 var array = [30, "Alexandre"];
 array[2] = "Bcn";

@@ -29,7 +29,6 @@ for (let i = 0; i < 24; i++) {
     }
 }
 
-
 for (let loopCounter = 0; loopCounter < "Alexandre".length; loopCounter++) {
     console.log("Alexandre"[loopCounter]);
 }

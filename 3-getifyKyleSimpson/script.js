@@ -1,41 +1,39 @@
-// console.log(typeof doesNotExist)
-// var v;
-// console.log(typeof v);
-// v = "1";
-// console.log(typeof v);
-// v = 2;
-// console.log(typeof v);
-// v = true;
-// console.log(typeof v);
-// v = {};
-// console.log(typeof v);
-// v = Symbol();
-// console.log(typeof v);
-// v = null;
-// console.log(typeof v);
-// v = function () { };
-// console.log(typeof v);
+// In JavaScript types are associated with values
+// Variables does not have types. Values do have.
+
+console.log(typeof doesNotExist)
+var v;
+console.log(typeof v); //undefined
+v = "1";
+console.log(typeof v); //string
+v = 2;
+console.log(typeof v); //number
+v = true;
+console.log(typeof v); //boolean
+v = {};
+console.log(typeof v); //object
+v = Symbol();
+console.log(typeof v); //symbol
+v = null;
+console.log(typeof v); //object
+v = function () { };
+console.log(typeof v); //function
 
 
-// var greeting = "Hello, class!";
-// var something = greeting / 2;
-// console.log(something, Number.isNaN(something), Number.isNaN(greeting), typeof something);
+var greeting = "Hello, class!";
+var something = greeting / 2;
+console.log(something, Number.isNaN(something), Number.isNaN(greeting), typeof something);
 
 // // Falsy
-// console.log(Boolean(""));
-// console.log(Boolean(0));
-// console.log(Boolean(-0));
-// console.log(Boolean(null));
-// console.log(Boolean(NaN));
-// console.log(Boolean(false));
-// console.log(Boolean(undefined));
+console.log(Boolean(""));
+console.log(Boolean(0));
+console.log(Boolean(-0));
+console.log(Boolean(null));
+console.log(Boolean(NaN));
+console.log(Boolean(false));
+console.log(Boolean(undefined));
 
-// // Truthy
-// (function sayHello() {
-//     console.log('hello');
-// })();
-
-// function expressions
+// Truthy all the other values
 
 //SCOPE
 // Where the JavaScript engine need to look to get the variables
@@ -45,7 +43,6 @@ function otherClass() {
     instructor = "Suzy";
     topic = "React"; // A variable undeclared will be created in the global scope
     console.log('Welcome!');
-
 }
 
 otherClass();
@@ -100,5 +97,3 @@ function ask(question) {
 }
 
 ask("What is closure?");
-
-//THIS
