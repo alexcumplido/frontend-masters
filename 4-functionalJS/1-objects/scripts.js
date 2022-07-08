@@ -44,6 +44,7 @@
 
 {
     let game = {};
+
     game['weapons'] = [
         {
             type: 'lasers',
