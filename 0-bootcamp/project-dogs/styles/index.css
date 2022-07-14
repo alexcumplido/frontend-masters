@@ -41,18 +41,3 @@ main {
 .target-dog-img {
     max-width: 100%;
 }
-
-@keyframes spin {
-    0% {
-        transform: rotateZ(0deg);
-    }
-
-    90% {
-        transform: rotateZ(350deg);
-    }
-
-    100% {
-        transform: rotateZ(360deg);
-    }
-
-}
