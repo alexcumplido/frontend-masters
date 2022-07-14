@@ -1,33 +1,71 @@
+var suspects = ['Miss Scarlet', 'Colonel Mustard', 'Mr. White'];
+
+function createSupectObjects(name) {
+    return {
+        name: name,
+        color: name.split(' ')[1],
+        speak() {
+            console.log(`My name is ${name}`)
+        }
+    };
+};
+
+
 {
-    function CreateSuspectObjects(name) {
-        return {
-            name: name,
-            color: name.split(' ')[1],
-            speak() {
-                console.log(`my name is ${name}`);
-            }
-        };
-    }
-    let suspects = ['Miss Scarlet', 'Colonel Mustard', 'Mr. White']
-    let supectList = [];
-
+    //What it means to Hydrate data into an object ?
+    //What is an hidrated Object ?
+    var suspectList = [];
     for (let i = 0; i < suspects.length; i++) {
-        supectList.push(
-            CreateSuspectObjects(suspects[i])
-        )
+        suspectList.push(
+            createSupectObjects(suspects[i])
+        );
     }
+}
 
-    suspects.forEach(function (suspect) {
-        supectList.push(
-            CreateSuspectObjects(suspect)
-        )
-    });
+
+{
+    //What it means to Hydrate data into an object ?
+    //What is an hidrated Object ?
+    _.each(
+        ['Miss Scarlet', 'Colonel Mustard', 'Mr. White'],
+        function (value, index, list) {
+            console.log(value);
+            let suspectObject = createSupectObjects(list[index]);
+            suspectList.push(suspectObject);
+        });
+
+    console.log(suspectList);
 }
 
 {
-    let objects = ['observatory', 'ballrom', 'library'];
-    let logger = function (value) {
-        console.log(value);
+    var suspectList = [];
+    ['Miss Scarlet', 'Colonel Mustard', 'Mr. White']
+        .forEach(function (value, index, list) {
+            suspectList[index] = createSupectObjects(value);
+        })
+    console.log(suspectList);
+}
+
+{
+    const _ = {};
+    var suspectList = [];
+    _.each = function (list, callback) {
+        if (Array.isArray(list)) {
+            for (let i = 0; i < list.length; i++) {
+                callback(list[i], i, list);
+            }
+        } else {
+            for (let key in list) {
+                callback(list[key], key, list);
+            }
+        }
     }
-    objects.forEach(logger)
+
+    _.each(['sally', 'george', 'porgie'], function (name, i, list) {
+        if (list[i + 1]) {
+            console.log(`${name} is younger than ${list[i + 1]}`);
+        } else {
+            console.log(`${name} is the oldest.`);
+        }
+    })
 }
