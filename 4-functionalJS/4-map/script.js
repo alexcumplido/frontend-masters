@@ -19,7 +19,7 @@ let suspects = {
 
 {
     // What is the main difference between .forEach() and .map() function ?
-    let dataMap = weapons.map(function (element, index, list) {
+    let dataMap = weapons.map(function (element, index, array) {
         return element;
     });
     console.log(dataMap);
@@ -29,17 +29,37 @@ let suspects = {
     const makeBroken = function (item) {
         return `broken ${item}`
     }
-    let brokenWeapons = weapons.map(function (element, index, list) {
+    let brokenWeapons = weapons.map(function (element, index, array) {
         return makeBroken(element);
     });
     console.log(brokenWeapons);
 }
 
 {
+    _map = function (array, callback) {
+        let storage = [];
+        for (let i = 0; i < array.length; i++) {
+            storage.push(
+                callback(array[i], i, array)
+            )
+        }
+        // _.each(array, function (value, index, array) {
+        //     storare.push(callback(value, index, array))
+        // })
+        return storage;
+    }
+
+    let newArray = _map([1, 2, 3], function (value) {
+        return value + 1;
+    })
+    console.log(newArray);
+}
+
+{
     let objectList = [];
     if (Array.isArray(suspects)) {
-        objectList = suspects.map(function (element, index, list) {
-            return createSupectObjects(list[index]);
+        objectList = suspects.map(function (element, index, array) {
+            return createSupectObjects(array[index]);
         });
     } else {
         for (let key in suspects) {
@@ -49,18 +69,4 @@ let suspects = {
         }
     }
     console.log(objectList);
-}
-
-{
-    _map = function (list, callback) {
-        let arrayStorage = [];
-        for (let i = 0; i < list.length; i++) {
-            arrayStorage.push(
-                callback(list[i], i, list)
-            )
-        }
-
-
-        return arrayStorage;
-    }
 }
