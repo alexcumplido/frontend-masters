@@ -13,7 +13,7 @@ const game = {
 
 {
     for (let i = 0; i < game.suspects.length; i++) {
-        console.log(game.suspects[i])
+        console.log(game.suspects[i]);
     }
 }
 
@@ -34,16 +34,7 @@ const game = {
     }
 }
 
-//Destructure this nested data structure into two variables with the strings 'red' and 'orange'
-const suspects = [
-    {
-        name: "Rusty",
-        color: "orange"
-    },
-    {
-        name: "Miss Scarlet",
-        color: "red",
-    }
-]
-
-let [{ color: firstColor }, { color: secondColor }] = suspects;
+{
+    //Destructure this nested data structure into two variables with the strings 'red' and 'orange'
+    let [{ color: firstColor }, { color: secondColor }] = game.suspects;
+}

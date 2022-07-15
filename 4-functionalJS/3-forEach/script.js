@@ -10,10 +10,8 @@ function createSupectObjects(name) {
     };
 };
 
-
 {
-    //What it means to Hydrate data into an object ?
-    //What is an hidrated Object ?
+    //What it means to Hydrate data into an object ? What is an hidrated Object ?
     var suspectList = [];
     for (let i = 0; i < suspects.length; i++) {
         suspectList.push(
@@ -22,10 +20,7 @@ function createSupectObjects(name) {
     }
 }
 
-
 {
-    //What it means to Hydrate data into an object ?
-    //What is an hidrated Object ?
     _.each(
         ['Miss Scarlet', 'Colonel Mustard', 'Mr. White'],
         function (value, index, list) {
@@ -33,7 +28,6 @@ function createSupectObjects(name) {
             let suspectObject = createSupectObjects(list[index]);
             suspectList.push(suspectObject);
         });
-
     console.log(suspectList);
 }
 

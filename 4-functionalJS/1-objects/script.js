@@ -1,9 +1,10 @@
-// Objects
+
 {
+    // Objects
     var personObject = {};
     personObject.name = "Mrs. White";
-    var who = personObject.name; // Storing a value by value
-    personObject.name = "Mr. White"; // Storing a value by reference 
+    var who = personObject.name; // What is storing a value by value ?
+    personObject.name = "Mr. White"; // What does it mean storing a value by reference? 
     // The value of "Mrs. White" goes garbage collected since "Mr. White is the new value referenced for the property person.name"
     who.story // Undefined 
 
@@ -11,14 +12,14 @@
     var personArray = [];
     personArray.name = "Mrs. White";
     var who = personArray.name; // Because arrays are objects we can set properties inside of them
-    let typeArray = (typeof personArray === "array"); // false
+    let typeArray = (typeof personArray === "array"); // What is gonna return typeArray and why ?
     let typeObject = (typeof personArray === "object"); // true
     let isArray = Array.isArray(personArray);
     let objectKeys = Object.keys(personArray);
 
     personArray[0] = "I was not in ..."; // 0 is being stringify
     try {
-        personArray[statement] = "I would never!" // JS parses this line and does not find an string value for plea
+        personArray[statement] = "I would never!" // What happen when JS parses this line ?
     } catch {
         console.log(typeof statement)
     }
@@ -29,21 +30,22 @@
 }
 
 // Object array Rules
-// Array is a type of object with attached methods
-// Before accessing a property have to be defined
-// Dot notation coerces into a string when bracket notation does not
-// Does notation can be used when passed an string or a usual character
 
-// The main difference between arrays and others objects is that an array has the property .length
-// wich is computed as you add numerical indexes
+// What type of value is arra ? 
+// Can access a property of an object without previous definition ?
+// In what coerces dot notation that does not bracket notation ?
+// What is the difference between dot and bracket notation ?
+
+// What is the main difference between arrays and the other type of objects ?
+
+// The main difference between arrays and others objects is that an array has the property .length , computed as you add numerical indexes
 // and numerical idexes are different than properties on an array because an array captures that and increment the length
 
-// Create an object an array that represents a clue game
-// Values: Characters, weapons, rooms, special card with character, room, weapon
+
 
 {
+    // Create an object an array that represents a clue game
     let game = {};
-
     game['weapons'] = [
         {
             type: 'lasers',
@@ -57,9 +59,7 @@
             type: 'dish soap',
             location: 'kitchen'
         },
-
     ]
-
     game.name = []
     game.name[0] = "Bianca";
     game.name[1] = "Marc";
@@ -72,29 +72,16 @@
         prop1: "Alex",
         prop2: "Laura"
     }
-
     Object.freeze(objectFreezed);
     objectFreezed.prop1 = "Alexandre";
 }
 
-// What is an object ?
-// A non primitive value that can hold any type of value and has methods attached to it.
-// Store data in a syntax of properties and values, "keys" : "values".
-
-// What is the difference between dot and bracket notation ?
-// Dot notationa accepts only a string type value and save us tipping time.
-
+// What is an object ? How data is stored in it ?
 // How do you add a property with a key that contains special characters ?
-// Through bracket notation wrapper in question marks
-
 // How do you add a property whose key and value are stored in different variables ?
-// Using dot notation in case is a pure string or bracket notation
 
-// object[property] = value;
-
-
-// ES6 Destructuring
-// Declare a variable and reference to them
+// ES6 Destructuring:
+// How do you pullout values from objects declaring a variable and reference to them
 
 const [first, second, third] = [true, false];
 
@@ -109,7 +96,7 @@ const [first, second, third] = [true, false];
     let weapon = confidential.weapon;
 
     {
-        //Destructuring save us time
+        // What technique is more efficient ?
         let { weapon, name, room } = confidential;
     }
 
@@ -119,30 +106,27 @@ const [first, second, third] = [true, false];
             console.log(`${key}: ${confidential.key}`)
         }
     }
-
 }
 
-//Destructuring an array
 {
     let [a, b] = [1, 2];
     //=> 1 2
 }
 
 {
-    //Omit certain values
+    // How do we omit certain value ?
     let [a, , b] = [1, 2, 3]
     //=> 1 3
 }
 
 {
-    // Combine with spread/rest operator (accumulates the rest of the values)
+    // What happens when combine with spread operator ?
     let [a, ...b] = [1, 2, 3]
     //=> 1 [2,3]
 }
 
 {
     // Swap variables easily without a temporary variables
-    // Before
     let a = 1
     let b = 2;
     [b, a] = [a, b];
@@ -150,10 +134,10 @@ const [first, second, third] = [true, false];
 }
 
 {
+    //Before
     let a = 1
     let b = 2;
     let temporary = a;
     a = b;
     b = temporary;
-    console.log(a, b);
 }
