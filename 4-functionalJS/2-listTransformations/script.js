@@ -12,6 +12,7 @@ const game = {
 }
 
 {
+    // How can we console.log the objects inside game array
     for (let i = 0; i < game.suspects.length; i++) {
         console.log(game.suspects[i]);
     }

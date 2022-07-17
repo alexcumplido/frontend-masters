@@ -1,4 +1,3 @@
-
 {
     // Objects
     var personObject = {};
@@ -35,13 +34,10 @@
 // Can access a property of an object without previous definition ?
 // In what coerces dot notation that does not bracket notation ?
 // What is the difference between dot and bracket notation ?
-
 // What is the main difference between arrays and the other type of objects ?
 
 // The main difference between arrays and others objects is that an array has the property .length , computed as you add numerical indexes
 // and numerical idexes are different than properties on an array because an array captures that and increment the length
-
-
 
 {
     // Create an object an array that represents a clue game
