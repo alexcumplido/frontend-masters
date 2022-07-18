@@ -178,9 +178,3 @@ const videoData = [
     console.log(constructArray('Was', 'it', 'in'));
 }
 
-{
-    const _from = function (arguments) {
-        const newArray = Array.prototype.slice.call(arguments);
-        return newArray;
-    }
-}
