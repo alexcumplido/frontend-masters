@@ -4,34 +4,37 @@
 // What triggers the keyword return in the function body ?
 // What is a side effect of a function ?
 
-var nameImprover = function (name, adj) { //Fn name, fn definition with parameters
-    return 'Col ' + name + ' Mc' + adj + ' pants'; //fn return with no side effects
-};//fn body closes
+{
+    var nameImprover = function (name, adj) { //Fn name, fn definition with parameters
+        return 'Col ' + name + ' Mc' + adj + ' pants'; //fn return with no side effects
+    };//fn body closes
 
-$('body').hide();//Fn name call with arguments 'body'. Fn name .hide() just calling creating side effects
+    $('body').hide();//Fn name call with arguments 'body'. Fn name .hide() just calling creating side effects
 
-myArr.forEach(function (val) { //fn name with arguments, fn definition with parameters
-    console.log(val); //fn name invocating with arguments and creating side effects.
-});//fn body closes 
+    myArr.forEach(function (val) { //fn name with arguments, fn definition with parameters
+        console.log(val); //fn name invocating with arguments and creating side effects.
+    });//fn body closes 
 
-$('button').on('click', function () {//fn call with arguments 'button', fn call with arguments and fn declaration without parameters
-    console.log('Don\'t press my buttons!'); //fn name log calling with arguments and creating side effects.
-});//fn body closes
+    $('button').on('click', function () {//fn call with arguments 'button', fn call with arguments and fn declaration without parameters
+        console.log('Don\'t press my buttons!'); //fn name log calling with arguments and creating side effects.
+    });//fn body closes
 
 
-//Arrow functions
-var nameImprover = (name, adj) => {
-    return `Col ${name} Mc ${adj} pants`;
+    //Arrow functions
+    var nameImprover = (name, adj) => {
+        return `Col ${name} Mc ${adj} pants`;
+    }
+
+    myArr.forEach(val => console.log(val));
+
+    $('button').on('click', () => {
+        console.log('Don\'t press my buttons!');
+    });
 }
 
-myArr.forEach(val => console.log(val));
-
-$('button').on('click', () => {
-    console.log('Don\'t press my buttons!');
-});
 
 
-//Projecting exercise 
+//What is a projecting exercise ?
 const videoData = [
     {
         name: 'Miss Scarlet',
@@ -124,12 +127,6 @@ const videoData = [
         return filterStorage;
     }
 
-    let suspects = _filter(videoData, function (element, index, list) {
-        if (list[index].present === true) {
-            return element;
-        }
-    })
-
     _map = function (list, callback) {
         let mapStorage = [];
         for (let i = 0; i < list.length; i++) {
@@ -137,6 +134,12 @@ const videoData = [
         }
         return mapStorage;
     }
+
+    let suspects = _filter(videoData, function (element, index, list) {
+        if (list[index].present === true) {
+            return element;
+        }
+    })
 
     let suspectsName = _map(suspects, function (element, index, list) {
         return list[index].name;
@@ -152,7 +155,7 @@ const videoData = [
     }
 
     const createTupleSpreed = function (a, b, c, ...d) {
-        console.log(arguments);// About what tell us explicitly arguments keyword ?
+        console.log(arguments);// About what tell us explicitly arguments keyword ? What returns the arguments keyword ?
         return [[a, c], [b, d]];
     }
     console.log(createTuple('It', 'be', 'could', 'anyone', 'no one'));
@@ -161,8 +164,23 @@ const videoData = [
 
 {
     const createDefault = (a, b = 2) => a + b;
-
     console.log(createDefault(1, 2));
     console.log(createDefault(2, 2));
 }
 
+{
+    const constructArray = function () {
+        // const array = Array.prototype.slice.call(arguments); //Canonical technique
+        const array = Array.from(arguments);
+        array.push('the billiard room?');
+        return array.join(' ');
+    }
+    console.log(constructArray('Was', 'it', 'in'));
+}
+
+{
+    const _from = function (arguments) {
+        const newArray = Array.prototype.slice.call(arguments);
+        return newArray;
+    }
+}
