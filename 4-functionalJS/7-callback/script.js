@@ -1,7 +1,7 @@
 // What can receive Higher Order functions as an argument ?
 
 {
-    // When is executed the anonymous functions passed to ifElse
+    // When is executed the anonymous functions passed to ifElse ?
     const ifElse = function (condition, isTrue, isFalse) {
         return condition ? isTrue() : isFalse();
     }
@@ -31,13 +31,17 @@
 
 {
     // Passing functions with parameters    
-    const ifElse = function (condition, isTrue, isFalse, ...parameters) {
-        return condition ? isTrue(...parameters) : isFalse(...parameters);
+    let names;
+    const ifElse = function (condition, isTrue, isFalse, ...args) {
+        return condition ? isTrue(...args) : isFalse(...args);
     }
 
     ifElse(true,
-        () => console.log(true),
-        () => console.log(false),
-        'Alexandre'
+        function (...arg) {
+            names.push(arg);
+        },
+        () => console.log('Alexandre'),
+        'Alexandre',
+        'Cumplido'
     )
 }
