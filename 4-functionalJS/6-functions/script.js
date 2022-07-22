@@ -32,8 +32,6 @@
     });
 }
 
-
-
 //What is a projecting exercise ?
 const videoData = [
     {
