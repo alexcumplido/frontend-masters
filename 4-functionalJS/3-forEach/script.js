@@ -21,6 +21,7 @@ function createSupectObjects(name) {
 }
 
 {
+    var suspectList = [];
     _.each(
         ['Miss Scarlet', 'Colonel Mustard', 'Mr. White'],
         function (value, index, list) {
