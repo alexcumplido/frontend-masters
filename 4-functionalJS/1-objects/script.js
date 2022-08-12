@@ -30,7 +30,7 @@
 
 // Object array Rules
 
-// What type of value is arra ? 
+// What type of value is array ? 
 // Can access a property of an object without previous definition ?
 // In what coerces dot notation that does not bracket notation ?
 // What is the difference between dot and bracket notation ?

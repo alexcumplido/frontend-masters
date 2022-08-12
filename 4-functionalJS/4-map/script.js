@@ -36,37 +36,24 @@ let suspects = {
 }
 
 {
-    _map = function (array, callback) {
+    const _ = {};
+    _.map = function (array, callback) {
         let storage = [];
-        for (let i = 0; i < array.length; i++) {
-            storage.push(
-                callback(array[i], i, array)
-            )
+        if (Array.isArray(array)) {
+            for (let i = 0; i < array.length; i++) {
+                storage.push(callback(array[i], i, array));
+            }
+        } else {
+            for (let key in array) {
+                storage.push(
+                    callback(array[key]);
+                );
+            }
         }
-        // _.each(array, function (value, index, array) {
-        //     storare.push(callback(value, index, array))
-        // })
         return storage;
     }
-
-    let newArray = _map([1, 2, 3], function (value) {
+    let newArray = _map([1, 2, 3], function (value, index, list) {
         return value + 1;
     })
     console.log(newArray);
-}
-
-{
-    let objectList = [];
-    if (Array.isArray(suspects)) {
-        objectList = suspects.map(function (element, index, array) {
-            return createSupectObjects(array[index]);
-        });
-    } else {
-        for (let key in suspects) {
-            objectList.push(
-                createSupectObjects(suspects[key])
-            );
-        }
-    }
-    console.log(objectList);
 }

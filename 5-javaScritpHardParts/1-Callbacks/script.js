@@ -34,17 +34,26 @@ const result2 = copyArrayAnDivideBy2(myArray);
 const result3 = copyArrayAndAdd2(myArray);
 
 
-
-function copyArrayAndManipulate(array, instructions) {
+function copyArray(array, instructions) {
     const output = [];
     for (let i = 0; i < array.length; i++) {
         output.push(instructions(array[i]));
     }
-    return output;
 }
 
-function multiplyBy2(input) {
-    return input * 2;
+function multiplyBy2(number) {
+    return number * 2;
 }
 
-let result = copyArrayAndManipulate(array, multiplyBy2);
+function divideBy2(number) {
+    return number / 2;
+}
+
+function addBy2(number) {
+    return number + 2;
+}
+
+const array = [1, 2, 3]
+let resultMultiply = copyArrayAndManipulate(array, multiplyBy2);
+let resultDivide = copyArrayAndManipulate(array, divideBy2);
+let resultAdd = copyArrayAndManipulate(array, addBy2);
