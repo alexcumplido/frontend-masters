@@ -57,3 +57,49 @@ const array = [1, 2, 3]
 let resultMultiply = copyArrayAndManipulate(array, multiplyBy2);
 let resultDivide = copyArrayAndManipulate(array, divideBy2);
 let resultAdd = copyArrayAndManipulate(array, addBy2);
+
+
+// Exercises http://csbin.io/callbacks
+
+// http://csbin.io/callbacks
+// In challenge 3, you've created a function called map. In this challenge, you're going to rebuild the map function by creating a function called mapWith.This time you're going to use forEach inside of mapWith instead of using a for loop.
+
+
+function map(array, callback) {
+    let storage = [];
+    if (Array.isArray(array)) {
+        for (let i = 0; i < array.length; i++) {
+            storage.push(callback(array[i], i, array));
+        }
+    } else {
+        for (let key in array) {
+            storage.push(callback(array[key], key, array));
+        }
+    }
+    return storage;
+}
+
+function forEach(array, callback) {
+    if (Array.isArray(array)) {
+        for (let i = 0; i < array.length; i++) {
+            callback(array[i], i, array);
+        }
+    } else {
+        for (let key in array) {
+            callback(array[key], key, array);
+        }
+    }
+}
+
+function mapWith(array, callback) {
+    let storage = [];
+    forEach(array, function () {
+        storage.push(callback);
+    });
+    return storage;
+}
+
+let arrayNumbers = [1, 2, 3];
+let testing = mapWith(arrayNumbers, function (element, index, list) {
+    return element + 1;
+});

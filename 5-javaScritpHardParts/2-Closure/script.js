@@ -20,3 +20,5 @@ const myNewFunction = outer();
 
 myNewFunction();
 myNewFunction();
+
+//Exercises http://csbin.io/closures
