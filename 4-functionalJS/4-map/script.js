@@ -45,9 +45,7 @@ let suspects = {
             }
         } else {
             for (let key in array) {
-                storage.push(
-                    callback(array[key])
-                );
+                storage.push(callback(array[key]));
             }
         }
         return storage;

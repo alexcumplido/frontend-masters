@@ -86,9 +86,17 @@ const videoData = [
     const _ = {};
     _.filter = function (array, callback) {
         let storage = [];
-        for (let i = 0; i < array.length; i++) {
-            if (callback(array[i], i, array) === true) {
-                storage.push(array[i]);
+        if (Array.isArray(array)) {
+            for (let i = 0; i < array.length; i++) {
+                if (callback(array[i], i, array) === true) {
+                    storage.push(array[i]);
+                }
+            }
+        } else {
+            for (let key in array) {
+                if (callback(array[key], key, array) === true) {
+                    storage.push(array[key]);
+                }
             }
         }
         return storage;
