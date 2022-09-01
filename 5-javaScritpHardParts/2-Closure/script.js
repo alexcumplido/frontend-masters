@@ -1,12 +1,12 @@
-// function createFunction() {
-//     function multiplyBy2(num) {
-//         return num * 2;
-//     }
-//     return multiplyBy2;
-// }
+function createFunction() {
+    function multiplyBy2(num) {
+        return num * 2;
+    }
+    return multiplyBy2;
+}
 
-// const generatedFunc = createFunction();
-// const result = generatedFunc(3);
+const generatedFunc = createFunction();
+const result = generatedFunc(3);
 
 function outer() {
     let counter = 0;
@@ -21,4 +21,4 @@ const myNewFunction = outer();
 myNewFunction();
 myNewFunction();
 
-//Exercises http://csbin.io/closures
+// Exercises http://csbin.io/closures
