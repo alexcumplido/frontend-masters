@@ -1,37 +1,37 @@
-// function tenSquare() {
-//     return 10 * 10;
-// }
+function tenSquare() {
+    return 10 * 10;
+}
 
-// console.log(tenSquare());
+console.log(tenSquare());
 
-// function copyArrayAndMultyplyBy2(array) {
-//     const output = [];
-//     for (let i = 0; i < array.length; i++) {
-//         output.push(array[i] * 2);
-//     }
-//     return output;
-// }
+function copyArrayAndMultyplyBy2(array) {
+    const output = [];
+    for (let i = 0; i < array.length; i++) {
+        output.push(array[i] * 2);
+    }
+    return output;
+}
 
-// function copyArrayAnDivideBy2(array) {
-//     const output = [];
-//     for (let i = 0; i < array.length; i++) {
-//         output.push(array[i] / 2);
-//     }
-//     return output;
-// }
+function copyArrayAnDivideBy2(array) {
+    const output = [];
+    for (let i = 0; i < array.length; i++) {
+        output.push(array[i] / 2);
+    }
+    return output;
+}
 
-// function copyArrayAndAdd2(array) {
-//     const output = [];
-//     for (let i = 0; i < array.length; i++) {
-//         output.push(array[i] + 2);
-//     }
-//     return output;
-// }
+function copyArrayAndAdd2(array) {
+    const output = [];
+    for (let i = 0; i < array.length; i++) {
+        output.push(array[i] + 2);
+    }
+    return output;
+}
 
-// const myArray = [1, 2, 3];
-// const result1 = copyArrayAndMultyplyBy2(myArray);
-// const result2 = copyArrayAnDivideBy2(myArray);
-// const result3 = copyArrayAndAdd2(myArray);
+const myArray = [1, 2, 3];
+const result1 = copyArrayAndMultyplyBy2(myArray);
+const result2 = copyArrayAnDivideBy2(myArray);
+const result3 = copyArrayAndAdd2(myArray);
 
 
 function copyArray(array, instructions) {
@@ -69,7 +69,7 @@ let resultAdd = copyArray(array, addBy2);
 // Have map return a new array filled with numbers that are the result of using the 'callback' function on each element of the input array.
 
 function map(array, callback) {
-    let storage = [];
+    let mappedArray = [];
     if (Array.isArray(array)) {
         for (let index = 0; index < array.length; index++) {
             storage.push(callback(array[index]));
@@ -79,11 +79,11 @@ function map(array, callback) {
             storage.push(callback(array[key]));
         }
     }
-    return storage;
+    return mappedArray;
 }
 
-// Challenge 4
-// Create a function called forEach that takes an array and a callback, and runs the callback on each element of the array.forEach does not return anything.
+// // Challenge 4
+// // Create a function called forEach that takes an array and a callback, and runs the callback on each element of the array.forEach does not return anything.
 
 function forEach(array, callback) {
     if (Array.isArray(array)) {
@@ -102,7 +102,15 @@ function forEach(array, callback) {
 // In this challenge, you're going to rebuild the map function by creating a function called mapWith.
 // This time you're going to use forEach inside of mapWith instead of using a for loop.
 
+let testArray = [1, 2, 3];
 function mapWith(array, callback) {
-    let storage = [];
-    return storage;
+    let mappedArray = [];
+    forEach(array, function (item) {
+        mappedArray.push(callback(item));
+    });
+    return mappedArray;
 }
+
+let mappedArray = mapWith(testArray, function (item) {
+    return item + 2;
+});
