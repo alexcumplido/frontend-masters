@@ -39,19 +39,12 @@ function copyArray(array, instructions) {
     for (let i = 0; i < array.length; i++) {
         output.push(instructions(array[i]));
     }
+    return output;
 }
 
-function multiplyBy2(number) {
-    return number * 2;
-}
-
-function divideBy2(number) {
-    return number / 2;
-}
-
-function addBy2(number) {
-    return number + 2;
-}
+const multiplyBy2 = (number) => number * 2;
+const divideBy2 = (number) => number / 2;
+const addBy2 = (number) => number + 2;
 
 const array = [1, 2, 3]
 let resultMultiply = copyArray(array, multiplyBy2);
@@ -111,6 +104,7 @@ function mapWith(array, callback) {
     return mappedArray;
 }
 
-let mappedArray = mapWith(testArray, function (item) {
+function add2(item) {
     return item + 2;
-});
+}
+let mappedArray = mapWith(testArray, add2);
