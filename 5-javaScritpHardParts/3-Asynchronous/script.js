@@ -1,4 +1,3 @@
-
 {
     function printName() {
         console.log('Hey frontend developer!')
@@ -7,7 +6,6 @@
     for (let i = 0; i < 5000; i++) {
         console.log(i);
     }
-
     console.log('Me First');
 }
 
@@ -76,6 +74,38 @@
     }
     // Uncomment the following line to check your work!
     limitedRepeat(); // should log (every second, for 5 seconds): hi for now
+    // }
+}
+{
+    /* CHALLENGE 6 */
+    let intervalId;
+    function theEnd() {
+        console.log('This is the end!');
+    }
+    function clearAsync() {
+        clearInterval(intervalId);
+    }
+    function everyXsecsForYsecs(func, timeInterval, timeDuration) {
+        intervalId = setInterval(func, timeInterval);
+        setTimeout(clearAsync, timeDuration);
+    }
+    everyXsecsForYsecs(theEnd, 2000, 20000); // should invoke theEnd function every 2 seconds, for 20 seconds): This is the end!
+}
+
+{
+    /*CHALLEGE 7*/
+    function delayCounter(target, wait) {
+        let time = target;
+        function counter() {
+            setInterval(function () {
+                console.log(`${time++} wait ${wait}`);
+            }, 1000);
+        }
+        return counter;
+    }
+
+    const countLogger = delayCounter(3, 1000);
+    countLogger();
 }
 
 // Exercises http://csbin.io/promises
