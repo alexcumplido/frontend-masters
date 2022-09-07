@@ -1,5 +1,52 @@
 {
-    // Factory function approach
+    // Hardcoded approach
+    const user = {
+        name: 'Alexandre',
+        score: 30,
+        increment: function () {
+            user.score++;
+        }
+    }
+}
+
+{
+    // Dot notation approach
+    const user = {};
+    user.name = 'Alexandre';
+    user.score = 30;
+    user.increment = function () {
+        user.score++
+    }
+}
+
+{
+    // Object create approach
+    const user = Object.create(null);
+    user.name = 'Mixeta';
+    user.score = 5;
+    user.increment = function () {
+        user.score++
+    }
+}
+
+{
+    // Factory function approach 1
+    function userCreator(name, score) {
+        const newUser = {};
+        newUser.name = name;
+        newUser.score = score;
+        newUser.increment = function () {
+            newUser.score++;
+        }
+        return newUser;
+    }
+
+    const newUser = userCreator("Alexandre", 29);
+    console.log(newUser);
+}
+
+{
+    // Factory function approach 2
     function userCreator(name, score) {
         const newUser = Object.create(userFunctionStore);
         newUser.name = name;
@@ -9,14 +56,13 @@
 
     const userFunctionStore = {
         incrementScore: function () {
-            const add1 = () => this.score++;
+            const add1 = () => this.score++; //here this. is lexically scoped
             add1();
         }
     };
 
     const user1 = userCreator("Alexandre", 29);
-    user1.incrementScore();
-    console.log(user1, user1.hasOwnProperty('score'));
+    console.log(user1);
 }
 
 {
@@ -31,12 +77,11 @@
     }
 
     NewUserCreator.prototype.printName = function () {
-        console.log(`Hello ${this.name}`)
+        console.log(`Hello ${this.name}`);
     }
 
     const newUser1 = new NewUserCreator("Alexandre", 29);
-    newUser1.incrementScore();
-    console.log(newUser1, newUser1.printName(), newUser1.hasOwnProperty('score'));
+    console.log(newUser1);
 }
 
 {
@@ -55,6 +100,63 @@
     }
 
     const classUser = new UserCreator("Alexandre", 29);
-    classUser.incrementScore();
-    console.log(classUser, classUser.printName(), classUser.hasOwnProperty('score'));
+    console.log(classUser);
+}
+
+{
+    /*CHALLENGE 2*/
+    const personStore = {
+        greet: function () {
+            console.log(`hello`)
+        }
+    };
+
+    /*CHALLENGE 4*/
+    personStore.introduce = function () {
+        console.log(`Hi, my name is ${this.name}`);
+    }
+
+    /*CHALLENGE 3*/
+    function personFromPersonStore(name, age) {
+        const person = Object.create(personStore);
+        person.name = name;
+        person.age = age;
+        return person;
+    }
+
+    /*CHALLENGE 5*/
+    function PersonConstructor() {
+        this.greet = function () {
+            console.log(`hello`)
+        }
+    }
+
+    /*CHALLENGE 7*/
+    PersonConstructor.prototype.introduce = function () {
+        console.log(`Hi, my name is ${this.name}`);
+    }
+
+    /*CHALLENGE 6*/
+    function personFromConstructor(name, age) {
+        const person = new PersonConstructor();
+        person.name = name;
+        person.age = age;
+        return person;
+    }
+
+    /*CHALLENGE 8*/
+    class PersonClass {
+        constructor(name) {
+            this.name = name;
+        }
+        greet() {
+            console.log(`hello`);
+        }
+    }
+    /*CHALLENGE 9*/
+    class DeveloperClass extends PersonClass {
+        introduce() {
+            console.log(`Hi, my name is ${this.name}`);
+        }
+    }
 }
