@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <body>
+        <button id="xhr">Click to start request</button>
+        <button id="reload">Reload</button>
+        <pre readonly class="event-log"></pre>
+        <script>
+            const log = document.querySelector('.event-log');
+            document.querySelector('#xhr').addEventListener('click', () => { 
+                log.textContext = "";
+                const xhr = new XMLHttpRequest();
+                xhr.addEventListener('loadend', ()=> {
+                    log.textContent = `${log.textContent} Finished with status: ${xhr.status}`;
+                })
+                xhr.open('GET','https://raw.githubusercontent.com/mdn/content/main/files/en-us/_wikihistory.json');
+                xhr.send();
+                log.textContent = `${log.textContent}Started XHR request\n`;
+
+            });
+
+            document.querySelector('#reload').addEventListener('click', () => { 
+                log.textContent = '';
+                document.location.reload();
+            });
+
+            const fetchPromise = fetch('https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json');
+
+            console.log(fetchPromise);
+
+                        fetchPromise
+                        .then(function onFulfilled (response) {
+                            if (!response.ok)  throw new Error(`HTTP error: ${response.status}`);
+                            return response.json();
+                        })
+                        .then(function onFulfilled(response){
+                            console.log(response)
+                        })
+                        .catch(function onRejected(error){
+                            console.error(`Could not get products: ${error}`);
+                        })
+
+            console.log("Started request…");
+
+            async function fetchProducts(){
+                debugger;
+                try {
+                    const response = await fetch('https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json');
+                    if (!response.ok) throw new Error(`HTTP error: ${response.status}`);
+                    const data = await response.json();
+                    return data;
+                }
+                catch(error){
+                    console.error(`Could not get products: ${error}`)
+                }
+            }
+
+            const promise = fetchProducts();
+            promise.then((data) =>console.log(data[0].name));
+        </script>
+    </body>
+</html>
