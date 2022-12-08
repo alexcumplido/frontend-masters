@@ -1,15 +1,4 @@
 {
-    // Hardcoded approach
-    const user = {
-        name: 'Alexandre',
-        score: 30,
-        increment: function () {
-            user.score++;
-        }
-    }
-}
-
-{
     // Dot notation approach
     const user = {};
     user.name = 'Alexandre';
@@ -40,7 +29,6 @@
         }
         return newUser;
     }
-
     const newUser = userCreator("Alexandre", 29);
     console.log(newUser);
 }
@@ -67,20 +55,20 @@
 
 {
     //New keyword approach
-    function NewUserCreator(name, score) {
+    function userCreator(name, age) {
         this.name = name;
-        this.score = score;
+        this.age = age;
     }
-
-    NewUserCreator.prototype.incrementScore = function () {
+    
+    userCreator.prototype.increment = function () {
         this.score++;
     }
 
-    NewUserCreator.prototype.printName = function () {
-        console.log(`Hello ${this.name}`);
+    userCreator.prototype.printName = function () {
+        console.log(`Hello ${this.name}`)
     }
 
-    const newUser1 = new NewUserCreator("Alexandre", 29);
+    const newUser1 = new userCreator("Alexandre", 29);
     console.log(newUser1);
 }
 
