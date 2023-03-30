@@ -62,3 +62,25 @@ personnel[2][2] = "Adress2";
 
 console.table(personnel);
 
+// FIFO First In First Out
+{
+    // QUEUE is a FIFO data structure
+    // First In First Out
+    const queue = [];
+    queue.push(2);
+    queue.push(5); // [2, 5]
+    let i = queue.shift()
+    alert(i); // I equals 2 
+}
+
+// STACK LIFO Last In First Out
+{
+    // STACK is a LIFO data structure
+    // Last In Last Out
+    const queue = [];
+    queue.push(2);
+    queue.push(5); // [2, 5]
+    let i = queue.pop()
+    alert(i); // I equals 2 
+}
+
