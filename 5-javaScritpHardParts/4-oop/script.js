@@ -48,7 +48,7 @@
             add1();
         }
     };
-
+    
     const user1 = userCreator("Alexandre", 29);
     console.log(user1);
 }
